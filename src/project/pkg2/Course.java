@@ -6,10 +6,11 @@
 package project.pkg2;
 
 /**
- *
+98 *
  * @author Alex
  */
 import java.io.Serializable;
+import java.util.Calendar;
 public class Course implements Serializable 
 {
     private String name;
@@ -18,10 +19,10 @@ public class Course implements Serializable
     private int credits;
     private double grade;
     private int gradeType;
-    private Date startDate;
-    private Date endDate;
+    private Calendar startDate;
+    private Calendar endDate;
     
-    public Course(String name, String prefix, int code, Date start, Date end, double grade, int gradeType)
+    public Course(String name, String prefix, int code, Calendar start, Calendar end, double grade, int gradeType)
     {
         this.name = name;
         this.prefix = prefix;
@@ -62,16 +63,16 @@ public class Course implements Serializable
     {
         return gradeType;
     }
-    public Date getStart()
+    public Calendar getStart()
     {
         return startDate;
     }
-    public Date getEnd()
+    public Calendar getEnd()
     {
         return endDate;
     }
     
-    private int setCredits(int code)
+    private void setCredits(int code)
     {
          credits = (code / 10) % 10;
     }
@@ -97,11 +98,11 @@ public class Course implements Serializable
     {
         this.gradeType = gradeType;
     }
-    public void setEndDate(Date end)
+    public void setEndDate(Calendar end)
     {
         this.endDate = end;
     }
-    public void setStartDate(Date start)
+    public void setStartDate(Calendar start)
     {
         this.startDate = start;
     }
