@@ -9,18 +9,19 @@ package project.pkg2;
  *
  * @author Alex
  */
-public class Course 
+import java.io.Serializable;
+public class Course implements Serializable 
 {
     private String name;
     private String prefix;
     private int  courseCode;
     private int credits;
-    private int grade;
+    private double grade;
     private int gradeType;
     private Date startDate;
     private Date endDate;
     
-    public Course(String name, String prefix, int code, Date start, Date end, int grade, int gradeType)
+    public Course(String name, String prefix, int code, Date start, Date end, double grade, int gradeType)
     {
         this.name = name;
         this.prefix = prefix;
@@ -53,7 +54,7 @@ public class Course
     {
         return credits;
     }
-    public int getGrade()
+    public double getGrade()
     {
         return grade;
     }
@@ -104,7 +105,7 @@ public class Course
     {
         this.startDate = start;
     }
-    private void makeGradeScale(int testWeight, int homeworkWeight, int projectWeight, int paperWeight, int quizWeight)
+    private void makeGradeScale(double testWeight, double homeworkWeight, double projectWeight, double paperWeight, double quizWeight)
     {   
         GradeScale gradeScale = new GradeScale(testWeight, homeworkWeight, projectWeight, paperWeight, quizWeight);
     }
