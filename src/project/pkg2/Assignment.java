@@ -9,18 +9,19 @@ package project.pkg2;
  *
  * @author Alex
  */
-public class Assignment 
+import java.io.Serializable;
+public class Assignment implements Serializable
 {
-    private int grade;
+    private double grade;
     private String name;
     
-    public Assignment(int originalGrade, String name)
+    public Assignment(double originalGrade, String name)
     {
         this.grade = originalGrade;
         this.name = name;
     }
     
-    public int getGrade()
+    public double getGrade()
     {
         return grade;
     }
@@ -30,7 +31,7 @@ public class Assignment
         return name;
     }
     
-    public void setGrade(int newGrade)
+    public void setGrade(double newGrade)
     {
         this.grade = newGrade;
     }

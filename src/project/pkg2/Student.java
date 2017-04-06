@@ -10,7 +10,8 @@ package project.pkg2;
  * @author Kyle
  * @version 3
  */
-public class Student 
+import java.io.Serializable;
+public class Student implements Serializable
 {
     private int gpa;
     private int creditsNeeded;
