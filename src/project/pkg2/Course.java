@@ -106,6 +106,10 @@ public class Course implements Serializable
     {
         this.startDate = start;
     }
+    public String toString()
+    {
+        return getTitle() + "   Grade     Credits";
+    }
     private void makeGradeScale(double testWeight, double homeworkWeight, double projectWeight, double paperWeight, double quizWeight)
     {   
         GradeScale gradeScale = new GradeScale(testWeight, homeworkWeight, projectWeight, paperWeight, quizWeight);
