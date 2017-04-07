@@ -68,4 +68,9 @@ public class Student implements Serializable
     {
         creditsNeeded = needed;
     }
+    
+    public String toString()
+    {
+        return name + " ID " id + " GPA " + gpa + " Credits Earned " + creditsEarned;
+    }
 }
