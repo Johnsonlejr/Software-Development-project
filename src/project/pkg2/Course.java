@@ -11,6 +11,8 @@ package project.pkg2;
  */
 import java.io.Serializable;
 import java.util.Calendar;
+import java.util.ArrayList;
+
 public class Course implements Serializable 
 {
     private String name;
@@ -22,6 +24,8 @@ public class Course implements Serializable
     private Calendar startDate;
     private Calendar endDate;
     private boolean isFinished;
+    private ArrayList assignments;
+    
     public Course(String name, String prefix, int code, Calendar start, Calendar end, double grade, int gradeType)
     {
         this.name = name;
@@ -32,12 +36,15 @@ public class Course implements Serializable
         this.grade = grade;
         this.gradeType = gradeType;
         isFinished = false;
+        assignments = new ArrayList<Assignment>();
         setCredits(code);
     }
+    
     public boolean isFinished()
     {
         return isFinished;
     }
+    
     public String getName()
     {
         return name;
@@ -47,30 +54,37 @@ public class Course implements Serializable
     {
         return courseCode;
     }
+    
     public String getPrefix()
     {
         return prefix;
     }
+    
     public String getTitle()
     {
         return  prefix + " " + courseCode + " " + name;
     }
+    
     public int getCredits()
     {
         return credits;
     }
+    
     public double getGrade()
     {
         return grade;
     }
+    
     public int getGradeType()
     {
         return gradeType;
     }
+    
     public Calendar getStart()
     {
         return startDate;
     }
+    
     public Calendar getEnd()
     {
         return endDate;
@@ -85,10 +99,12 @@ public class Course implements Serializable
     {
         this.name = name;
     }
+    
     public void setCourseCode(int code)
     {
         this.courseCode = code;
     }
+    
     public void setPrefix(String prefix)
     {
         this.prefix = prefix;
@@ -98,24 +114,31 @@ public class Course implements Serializable
     {
         this.grade = grade;
     }
+    
     public void setGradeType(int gradeType)
     {
         this.gradeType = gradeType;
     }
+    
     public void setEndDate(Calendar end)
     {
         this.endDate = end;
     }
+    
     public void setStartDate(Calendar start)
     {
         this.startDate = start;
     }
-    public String toString()
+    
+    public void addAssignment(Assignment newAssignment)
     {
-        return getTitle() + "   Grade     Credits";
+        assignments.add(newAssignment);
     }
-    private void makeGradeScale(double testWeight, double homeworkWeight, double projectWeight, double paperWeight, double quizWeight)
+     
+   /**DO WE STILL NEED IT
+    * private void makeGradeScale()
     {   
         GradeScale gradeScale = new GradeScale(testWeight, homeworkWeight, projectWeight, paperWeight, quizWeight);
     }
+    */
 }

@@ -8,17 +8,31 @@ package project.pkg2;
 /**
  * This class creates the student
  * @author Kyle
+ * @author Alex
  * @version 3
  */
 import java.io.Serializable;
+import java.util.ArrayList;
+
 public class Student implements Serializable
 {
-    private int gpa;
+    private double gpa;
     private int creditsNeeded;
     private String name;
     private int id;
     private int creditsEarned;
+    private ArrayList courses;
     
+    public Student(String name, int id)
+    {
+        
+        this.name = name;
+        this.id = id;
+        gpa = Calculator.gpa(courses);
+        creditsEarned = Calculator.creditsEarned(courses);
+        
+        
+    }
     public int getGpa()
     {
         return gpa;
@@ -44,16 +58,6 @@ public class Student implements Serializable
         return creditsEarned;
     }
     
-    public void setGpa(int gradePointAverage)
-    {
-        gpa = gradePointAverage;
-    }
-    
-    public void setCreditsEarned(int earned)
-    {
-        creditsEarned = earned;
-    }
-    
     public void setName(String studentName)
     {
         name = studentName;
@@ -67,6 +71,16 @@ public class Student implements Serializable
     public void setCreditsNeeded(int needed)
     {
         creditsNeeded = needed;
+    }
+    
+    public void calculateGpa(ArrayList<Course> courses)
+    {
+        gpa = Calculator.gpa(courses);
+    }
+    
+    public void calculateCreditsEarned(ArrayList<Course> courses)
+    {
+        creditsEarned = Calculator.creditsEarned(courses);
     }
     
     public String toString()

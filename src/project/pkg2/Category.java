@@ -24,4 +24,6 @@ public class Category
         this.weight = weight;
         average = Calculator.average(assignments);
     }
+    
+    public 
 }
