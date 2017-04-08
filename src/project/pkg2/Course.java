@@ -21,7 +21,7 @@ public class Course implements Serializable
     private int gradeType;
     private Calendar startDate;
     private Calendar endDate;
-    
+    private boolean isFinished;
     public Course(String name, String prefix, int code, Calendar start, Calendar end, double grade, int gradeType)
     {
         this.name = name;
@@ -31,9 +31,13 @@ public class Course implements Serializable
         this.endDate = end;
         this.grade = grade;
         this.gradeType = gradeType;
+        isFinished = false;
         setCredits(code);
     }
-    
+    public boolean isFinished()
+    {
+        return isFinished;
+    }
     public String getName()
     {
         return name;
