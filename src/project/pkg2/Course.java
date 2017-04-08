@@ -24,7 +24,7 @@ public class Course implements Serializable
     private Calendar startDate;
     private Calendar endDate;
     private boolean isFinished;
-    private ArrayList assignments;
+    private ArrayList categories;
     
     public Course(String name, String prefix, int code, Calendar start, Calendar end, double grade, int gradeType)
     {
@@ -36,7 +36,7 @@ public class Course implements Serializable
         this.grade = grade;
         this.gradeType = gradeType;
         isFinished = false;
-        assignments = new ArrayList<Assignment>();
+        categories = new ArrayList<Category>();
         setCredits(code);
     }
     
@@ -110,7 +110,7 @@ public class Course implements Serializable
         this.prefix = prefix;
     }
     
-    public void setGrade(int grade)
+    public void setGrade(double grade)
     {
         this.grade = grade;
     }
@@ -130,9 +130,15 @@ public class Course implements Serializable
         this.startDate = start;
     }
     
-    public void addAssignment(Assignment newAssignment)
+    public void addAssignment(Category newCategory)
     {
-        assignments.add(newAssignment);
+        categories.add(newCategory);
+        calculateGrade();
+    }
+    
+    public void calculateGrade()
+    {
+        grade = Calculator.grade(categories);
     }
      
    /**DO WE STILL NEED IT

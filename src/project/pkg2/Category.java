@@ -20,10 +20,45 @@ public class Category
     
     public Category(String name, double weight)
     {
+        assignments = new ArrayList<Assignment>();
         this.name = name;
         this.weight = weight;
         average = Calculator.average(assignments);
     }
     
-    public 
+    public double getAverage()
+    {
+        return average;
+    }
+    
+    public double getWeight()
+    {
+        return weight;
+    }
+    
+    public String getName()
+    {
+        return name;
+    }
+    
+    public void setName(String newName)
+    {
+        this.name = newName;
+    }
+    
+    public void setWeight(double newWeight)
+    {
+        this.weight = newWeight;
+    }
+    
+    public void calculateAverage()
+    {
+        average = Calculator.average(assignments);
+    }
+    
+    public void addAssigment(Assignment newAssignment)
+    {
+        assignments.add(newAssignment);
+        calculateAverage();
+    }
 }

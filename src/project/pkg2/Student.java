@@ -23,17 +23,16 @@ public class Student implements Serializable
     private int creditsEarned;
     private ArrayList courses;
     
-    public Student(String name, int id)
+    public Student(String name, int id, int creditsNeeded)
     {
-        
         this.name = name;
         this.id = id;
+        this.creditsNeeded = creditsNeeded; 
         gpa = Calculator.gpa(courses);
-        creditsEarned = Calculator.creditsEarned(courses);
-        
-        
+        creditsEarned = Calculator.creditsEarned(courses); 
     }
-    public int getGpa()
+    
+    public double getGpa()
     {
         return gpa;
     }
@@ -73,18 +72,23 @@ public class Student implements Serializable
         creditsNeeded = needed;
     }
     
-    public void calculateGpa(ArrayList<Course> courses)
+    public void calculateGPA()
     {
         gpa = Calculator.gpa(courses);
     }
     
-    public void calculateCreditsEarned(ArrayList<Course> courses)
+    public void calculateCreditsEarned()
     {
         creditsEarned = Calculator.creditsEarned(courses);
     }
     
+    public void addCourse(Course newCourse)
+    {
+        courses.add(newCourse);
+    }
+    
     public String toString()
     {
-        return name + " ID " id + " GPA " + gpa + " Credits Earned " + creditsEarned;
+        return name;
     }
 }
