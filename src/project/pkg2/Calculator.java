@@ -7,13 +7,22 @@ package project.pkg2;
 
 /**
  *
- * @author Alexander
+ * @author Alex
  */
 import java.util.ArrayList;
 
 public class Calculator 
 {
+    /**
+     * Empty constructor all methods are static no need to create object
+     */
     public Calculator(){}
+    
+    /** 
+     * calculates the average grade of the assignments
+     * @param list all the assignments of a category
+     * @return average grade of assignments
+     */
     
     public static double average(ArrayList<Assignment> list)
     {
@@ -24,6 +33,12 @@ public class Calculator
        }
        return total / list.size();
     }
+    
+    /**
+     * calculates the grade for the course
+     * @param list all of the categories for a course
+     * @return total the grade for the course
+     */
     
     public static double grade(ArrayList<Category> list)
     {
@@ -39,6 +54,13 @@ public class Calculator
         return total;
     }
     
+    
+    /**
+     * 
+     * @param list all the courses for the student
+     * @return the gpa of the student 
+     */
+    
     public static double gpa(ArrayList<Course> list)
     {
         double hours = 0;
@@ -53,6 +75,12 @@ public class Calculator
         return points / hours;
     }
     
+    /**
+     * calculates the credits a student has earned
+     * @param list all the courses for the student
+     * @return the credits that a student has earned
+     */
+    
     public static int creditsEarned(ArrayList<Course> list)
     {
         int creditsEarned = 0;
@@ -65,6 +93,14 @@ public class Calculator
         }
         return creditsEarned;
     }
+    
+    /**
+     * calculates the amount of points that a student has earned from a given 
+     * course based on their grade
+     * @param course
+     * @return the number of grade points earned in the course
+     */
+    
     private static double gpaPoints(Course course)
     {
         double grade = course.getGrade();
@@ -78,7 +114,5 @@ public class Calculator
             return 3 * course.getCredits();
         else
             return 4 * course.getCredits();
-    }
-    
-    
+    }    
 }
