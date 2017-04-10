@@ -14,11 +14,13 @@ public class Assignment implements Serializable
 {
     private double grade;
     private String name;
+    private String date;
     
-    public Assignment(double originalGrade, String name)
+    public Assignment(double originalGrade, String name, String date)
     {
         this.grade = originalGrade;
         this.name = name;
+        this.date = date;
     }
     
     public double getGrade()
@@ -34,11 +36,21 @@ public class Assignment implements Serializable
     public void setGrade(double newGrade)
     {
         this.grade = newGrade;
-    }
+    } 
     
     public void setName(String name)
     {
         this.name = name;
+    }
+    
+    public void setDate(String date)
+    {
+        this.date = date;
+    }
+    
+    public String getDate()
+    {
+        return date;
     }
     
     public String toString()

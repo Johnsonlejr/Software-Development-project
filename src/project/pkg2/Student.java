@@ -71,6 +71,6 @@ public class Student implements Serializable
     
     public String toString()
     {
-        return name + " ID " id + " GPA " + gpa + " Credits Earned " + creditsEarned;
+        return name + " ID " + id + " GPA " + gpa + " Credits Earned " + creditsEarned;
     }
 }

@@ -18,6 +18,7 @@ public class Course implements Serializable
     private int  courseCode;
     private int credits;
     private double grade;
+    private char letterGrade;
     private int gradeType;
     private Calendar startDate;
     private Calendar endDate;
@@ -32,6 +33,7 @@ public class Course implements Serializable
         this.grade = grade;
         this.gradeType = gradeType;
         setCredits(code);
+        letterGrade = convertToLetterGrade(grade);
     }
     
     public String getName()
@@ -72,6 +74,11 @@ public class Course implements Serializable
         return endDate;
     }
     
+    public char getLetterGrade()
+    {
+        return letterGrade;
+    }
+    
     private void setCredits(int code)
     {
          credits = (code / 10) % 10;
@@ -110,6 +117,21 @@ public class Course implements Serializable
     {
         return getTitle() + "   Grade     Credits";
     }
+    
+    public char convertToLetterGrade(double grade)
+    {
+        if (grade >= 90)
+            return 'A';
+        else if (grade >= 80)
+            return 'B';
+        else if (grade >= 70)
+            return 'C';
+        else if (grade >= 60)
+            return 'D';
+        else
+            return 'F';
+    }
+    
     private void makeGradeScale(double testWeight, double homeworkWeight, double projectWeight, double paperWeight, double quizWeight)
     {   
         GradeScale gradeScale = new GradeScale(testWeight, homeworkWeight, projectWeight, paperWeight, quizWeight);
