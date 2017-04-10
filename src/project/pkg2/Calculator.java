@@ -97,7 +97,7 @@ public class Calculator
     /**
      * calculates the amount of points that a student has earned from a given 
      * course based on their grade
-     * @param course
+     * @param course the course for which the points are being calculated
      * @return the number of grade points earned in the course
      */
     
