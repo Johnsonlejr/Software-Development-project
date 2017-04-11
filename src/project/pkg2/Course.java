@@ -221,10 +221,4 @@ public class Course implements Serializable
         grade = Calculator.grade(categories);
     }
      
-   /**DO WE STILL NEED IT?
-    * private void makeGradeScale()
-    {   
-        GradeScale gradeScale = new GradeScale(testWeight, homeworkWeight, projectWeight, paperWeight, quizWeight);
-    }
-    */
 }
