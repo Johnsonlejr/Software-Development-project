@@ -47,7 +47,7 @@ public class Calculator
         for (int i = 0; i < list.size(); i++)
         {
             current = list.get(i);
-            double weight = current.getWeight();
+            double weight = current.getWeight() / 100;
             double average = current.getAverage();
             total += (weight * average);
         }
