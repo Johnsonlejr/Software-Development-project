@@ -11,8 +11,18 @@ package project.SchoolTracker;
  */
 import java.util.Scanner;
 import java.util.Calendar;
+
+/**
+ *
+ * @author Kyle
+ */
 public class EmptyIterationOneTest 
 {
+
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args)
     {
         // Creating a student

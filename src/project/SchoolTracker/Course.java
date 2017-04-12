@@ -13,6 +13,10 @@ import java.io.Serializable;
 import java.util.Calendar;
 import java.util.ArrayList;
 
+/**
+ *
+ * @author Kyle
+ */
 public class Course implements Serializable 
 {
     private String name;

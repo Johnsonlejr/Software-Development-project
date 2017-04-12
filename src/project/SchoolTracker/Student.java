@@ -14,6 +14,10 @@ package project.SchoolTracker;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/**
+ *
+ * @author Kyle
+ */
 public class Student implements Serializable
 {
     private double gpa;

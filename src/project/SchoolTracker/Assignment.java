@@ -13,6 +13,10 @@ package project.SchoolTracker;
 import java.io.Serializable;
 import java.util.Calendar;
 
+/**
+ *
+ * @author Kyle
+ */
 public class Assignment implements Serializable
 {
     private double grade;
