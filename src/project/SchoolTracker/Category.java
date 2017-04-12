@@ -11,6 +11,10 @@ package project.SchoolTracker;
  */
 import java.util.ArrayList;
 
+/**
+ *
+ * @author Kyle
+ */
 public class Category 
 {
     private double weight;
