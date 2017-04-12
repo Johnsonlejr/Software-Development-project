@@ -223,6 +223,11 @@ public class Course implements Serializable
     //TODO
     public String toString()
     {
-        return name;
+       String result = name + " Grade: " + grade + "\n";
+       for (int i = 0; i < categories.size(); i++)
+       {
+           result += categories.get(i).toString() + "\n";
+       }
+       return result;
     }
 }

@@ -93,6 +93,11 @@ public class Category
     
     public String toString()
     {
-        String result = name + " Weight: " +  weight;
+        String result = "Category Name: " + name + " Category Weight: " +  weight + "\n";
+        for (int i = 0; i < assignments.size(); i++)
+        {
+            result += assignments.get(i).toString() + "\n";
+        }
+        return result;
     }
 }
