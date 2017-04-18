@@ -41,6 +41,23 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         createStudentButton = new javax.swing.JButton();
         loadStudentPanel = new javax.swing.JPanel();
         loadStudentInfoLabel = new javax.swing.JLabel();
+        loadStudentIdField = new javax.swing.JTextField();
+        loadButton = new javax.swing.JButton();
+        mainCoursePanel = new javax.swing.JPanel();
+        viewCoursesButton = new javax.swing.JButton();
+        addCourseButton = new javax.swing.JButton();
+        addCoursesPanel = new javax.swing.JPanel();
+        newCourseInfoLabel = new javax.swing.JLabel();
+        newCourseNameField = new javax.swing.JTextField();
+        newCoursePrefixField = new javax.swing.JTextField();
+        newCourseCodeField = new javax.swing.JTextField();
+        newCourseStartField = new javax.swing.JTextField();
+        newCourseEndField = new javax.swing.JTextField();
+        newCourseGradeField = new javax.swing.JTextField();
+        newCourseCreditsField = new javax.swing.JTextField();
+        createStudentButton1 = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        viewCoursesPanel = new javax.swing.JPanel();
         studentCardButton = new javax.swing.JButton();
         courseCardButton = new javax.swing.JButton();
         calculatorCardButton = new javax.swing.JButton();
@@ -87,7 +104,7 @@ public class TrackerCardGUI extends javax.swing.JFrame {
                 .addGap(98, 98, 98))
         );
 
-        mainPanel.add(defaultPanel, "panelOne");
+        mainPanel.add(defaultPanel, "defaultPanel");
 
         newStudentInfoLabel.setText("Enter student information");
 
@@ -185,29 +202,231 @@ public class TrackerCardGUI extends javax.swing.JFrame {
                 .addContainerGap(87, Short.MAX_VALUE))
         );
 
-        mainPanel.add(newStudentPanel, "panelTwo");
+        mainPanel.add(newStudentPanel, "newStudentPanel");
 
         loadStudentInfoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        loadStudentInfoLabel.setText("Load Student");
+        loadStudentInfoLabel.setText("Enter student ID");
+
+        loadButton.setText("Load");
 
         javax.swing.GroupLayout loadStudentPanelLayout = new javax.swing.GroupLayout(loadStudentPanel);
         loadStudentPanel.setLayout(loadStudentPanelLayout);
         loadStudentPanelLayout.setHorizontalGroup(
             loadStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loadStudentPanelLayout.createSequentialGroup()
-                .addContainerGap(172, Short.MAX_VALUE)
-                .addComponent(loadStudentInfoLabel)
+                .addContainerGap(156, Short.MAX_VALUE)
+                .addGroup(loadStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(loadStudentInfoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(loadStudentIdField)
+                    .addComponent(loadButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(166, 166, 166))
         );
         loadStudentPanelLayout.setVerticalGroup(
             loadStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(loadStudentPanelLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(34, 34, 34)
                 .addComponent(loadStudentInfoLabel)
-                .addContainerGap(204, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(loadStudentIdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(loadButton)
+                .addContainerGap(102, Short.MAX_VALUE))
         );
 
-        mainPanel.add(loadStudentPanel, "panelThree");
+        mainPanel.add(loadStudentPanel, "loadStudentPanel");
+
+        mainCoursePanel.setName(""); // NOI18N
+
+        viewCoursesButton.setText("View Courses");
+        viewCoursesButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewCoursesButtonActionPerformed(evt);
+            }
+        });
+
+        addCourseButton.setText("Add Course");
+        addCourseButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addCourseButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout mainCoursePanelLayout = new javax.swing.GroupLayout(mainCoursePanel);
+        mainCoursePanel.setLayout(mainCoursePanelLayout);
+        mainCoursePanelLayout.setHorizontalGroup(
+            mainCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mainCoursePanelLayout.createSequentialGroup()
+                .addGap(150, 150, 150)
+                .addGroup(mainCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(viewCoursesButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(addCourseButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(155, Short.MAX_VALUE))
+        );
+        mainCoursePanelLayout.setVerticalGroup(
+            mainCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainCoursePanelLayout.createSequentialGroup()
+                .addGap(74, 74, 74)
+                .addComponent(viewCoursesButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(addCourseButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(98, 98, 98))
+        );
+
+        mainPanel.add(mainCoursePanel, "mainCoursePanel");
+
+        newCourseInfoLabel.setText("Enter course information");
+
+        newCourseNameField.setText("Name");
+        newCourseNameField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                newCourseNameFieldFocusGained(evt);
+            }
+        });
+        newCourseNameField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newCourseNameFieldActionPerformed(evt);
+            }
+        });
+
+        newCoursePrefixField.setText("Prefix");
+        newCoursePrefixField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                newCoursePrefixFieldFocusGained(evt);
+            }
+        });
+        newCoursePrefixField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newCoursePrefixFieldActionPerformed(evt);
+            }
+        });
+
+        newCourseCodeField.setText("Code");
+        newCourseCodeField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                newCourseCodeFieldFocusGained(evt);
+            }
+        });
+        newCourseCodeField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newCourseCodeFieldActionPerformed(evt);
+            }
+        });
+
+        newCourseStartField.setText("Start Date (mm, yyyy)");
+        newCourseStartField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                newCourseStartFieldFocusGained(evt);
+            }
+        });
+
+        newCourseEndField.setText("End Date (mm, yyyy)");
+        newCourseEndField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                newCourseEndFieldFocusGained(evt);
+            }
+        });
+
+        newCourseGradeField.setText("Grade");
+        newCourseGradeField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                newCourseGradeFieldFocusGained(evt);
+            }
+        });
+        newCourseGradeField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newCourseGradeFieldActionPerformed(evt);
+            }
+        });
+
+        newCourseCreditsField.setText("Credits");
+        newCourseCreditsField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                newCourseCreditsFieldFocusGained(evt);
+            }
+        });
+        newCourseCreditsField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newCourseCreditsFieldActionPerformed(evt);
+            }
+        });
+
+        createStudentButton1.setText("Create Student");
+        createStudentButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createStudentButton1ActionPerformed(evt);
+            }
+        });
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Classic", "Pass Fail" }));
+
+        javax.swing.GroupLayout addCoursesPanelLayout = new javax.swing.GroupLayout(addCoursesPanel);
+        addCoursesPanel.setLayout(addCoursesPanelLayout);
+        addCoursesPanelLayout.setHorizontalGroup(
+            addCoursesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(addCoursesPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(addCoursesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(newCourseCodeField, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(newCoursePrefixField, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(newCourseNameField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
+                .addGroup(addCoursesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(newCourseStartField)
+                    .addComponent(newCourseEndField)
+                    .addComponent(newCourseGradeField, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
+                    .addComponent(newCourseCreditsField, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE))
+                .addGap(74, 74, 74))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addCoursesPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(addCoursesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(newCourseInfoLabel)
+                    .addComponent(createStudentButton1))
+                .addGap(131, 131, 131))
+        );
+        addCoursesPanelLayout.setVerticalGroup(
+            addCoursesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(addCoursesPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(newCourseInfoLabel)
+                .addGap(18, 18, 18)
+                .addGroup(addCoursesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(newCourseNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(newCourseStartField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(addCoursesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(newCoursePrefixField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(newCourseEndField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(addCoursesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(newCourseCodeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(newCourseGradeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(addCoursesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(newCourseCreditsField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addComponent(createStudentButton1)
+                .addContainerGap())
+        );
+
+        mainPanel.add(addCoursesPanel, "addCoursesPanel");
+
+        viewCoursesPanel.setPreferredSize(new java.awt.Dimension(402, 229));
+        viewCoursesPanel.setRequestFocusEnabled(false);
+
+        javax.swing.GroupLayout viewCoursesPanelLayout = new javax.swing.GroupLayout(viewCoursesPanel);
+        viewCoursesPanel.setLayout(viewCoursesPanelLayout);
+        viewCoursesPanelLayout.setHorizontalGroup(
+            viewCoursesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 402, Short.MAX_VALUE)
+        );
+        viewCoursesPanelLayout.setVerticalGroup(
+            viewCoursesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 229, Short.MAX_VALUE)
+        );
+
+        mainPanel.add(viewCoursesPanel, "viewCoursesPanel");
 
         studentCardButton.setText("Student");
         studentCardButton.addActionListener(new java.awt.event.ActionListener() {
@@ -217,6 +436,11 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         });
 
         courseCardButton.setText("Courses");
+        courseCardButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                courseCardButtonActionPerformed(evt);
+            }
+        });
 
         calculatorCardButton.setText("Calculator");
 
@@ -227,9 +451,9 @@ public class TrackerCardGUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(studentCardButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
+                .addGap(86, 86, 86)
                 .addComponent(courseCardButton)
-                .addGap(83, 83, 83)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
                 .addComponent(calculatorCardButton)
                 .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -259,21 +483,18 @@ public class TrackerCardGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void studentCardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentCardButtonActionPerformed
-        // TODO add your handling code here:
         CardLayout card = (CardLayout)mainPanel.getLayout();
-        card.show(mainPanel, "panelOne");
+        card.show(mainPanel, "defaultPanel");
     }//GEN-LAST:event_studentCardButtonActionPerformed
 
     private void addStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addStudentButtonActionPerformed
-        // TODO add your handling code here:
         CardLayout card = (CardLayout)mainPanel.getLayout();
-        card.show(mainPanel, "panelTwo");
+        card.show(mainPanel, "newStudentPanel");
     }//GEN-LAST:event_addStudentButtonActionPerformed
 
     private void loadStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadStudentButtonActionPerformed
-        // TODO add your handling code here:
         CardLayout card = (CardLayout)mainPanel.getLayout();
-        card.show(mainPanel, "panelThree");
+        card.show(mainPanel, "loadStudentPanel");
     }//GEN-LAST:event_loadStudentButtonActionPerformed
 
     private void newStudentNameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newStudentNameFieldActionPerformed
@@ -307,6 +528,73 @@ public class TrackerCardGUI extends javax.swing.JFrame {
     private void newStudentNeededFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_newStudentNeededFieldFocusGained
         newStudentNeededField.setText("");
     }//GEN-LAST:event_newStudentNeededFieldFocusGained
+
+    private void courseCardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseCardButtonActionPerformed
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "mainCoursePanel");
+    }//GEN-LAST:event_courseCardButtonActionPerformed
+
+    private void viewCoursesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewCoursesButtonActionPerformed
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "viewCoursesPanel");
+    }//GEN-LAST:event_viewCoursesButtonActionPerformed
+
+    private void addCourseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCourseButtonActionPerformed
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "addCoursesPanel");
+    }//GEN-LAST:event_addCourseButtonActionPerformed
+
+    private void newCourseNameFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_newCourseNameFieldFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_newCourseNameFieldFocusGained
+
+    private void newCourseNameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newCourseNameFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_newCourseNameFieldActionPerformed
+
+    private void newCoursePrefixFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_newCoursePrefixFieldFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_newCoursePrefixFieldFocusGained
+
+    private void newCoursePrefixFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newCoursePrefixFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_newCoursePrefixFieldActionPerformed
+
+    private void newCourseCodeFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_newCourseCodeFieldFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_newCourseCodeFieldFocusGained
+
+    private void newCourseStartFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_newCourseStartFieldFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_newCourseStartFieldFocusGained
+
+    private void newCourseEndFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_newCourseEndFieldFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_newCourseEndFieldFocusGained
+
+    private void createStudentButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createStudentButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_createStudentButton1ActionPerformed
+
+    private void newCourseCodeFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newCourseCodeFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_newCourseCodeFieldActionPerformed
+
+    private void newCourseGradeFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_newCourseGradeFieldFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_newCourseGradeFieldFocusGained
+
+    private void newCourseGradeFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newCourseGradeFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_newCourseGradeFieldActionPerformed
+
+    private void newCourseCreditsFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_newCourseCreditsFieldFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_newCourseCreditsFieldFocusGained
+
+    private void newCourseCreditsFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newCourseCreditsFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_newCourseCreditsFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -344,15 +632,30 @@ public class TrackerCardGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addCourseButton;
+    private javax.swing.JPanel addCoursesPanel;
     private javax.swing.JButton addStudentButton;
     private javax.swing.JButton calculatorCardButton;
     private javax.swing.JButton courseCardButton;
     private javax.swing.JButton createStudentButton;
+    private javax.swing.JButton createStudentButton1;
     private javax.swing.JPanel defaultPanel;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton loadButton;
     private javax.swing.JButton loadStudentButton;
+    private javax.swing.JTextField loadStudentIdField;
     private javax.swing.JLabel loadStudentInfoLabel;
     private javax.swing.JPanel loadStudentPanel;
+    private javax.swing.JPanel mainCoursePanel;
     private javax.swing.JPanel mainPanel;
+    private javax.swing.JTextField newCourseCodeField;
+    private javax.swing.JTextField newCourseCreditsField;
+    private javax.swing.JTextField newCourseEndField;
+    private javax.swing.JTextField newCourseGradeField;
+    private javax.swing.JLabel newCourseInfoLabel;
+    private javax.swing.JTextField newCourseNameField;
+    private javax.swing.JTextField newCoursePrefixField;
+    private javax.swing.JTextField newCourseStartField;
     private javax.swing.JTextField newStudentEarnedField;
     private javax.swing.JTextField newStudentGpaField;
     private javax.swing.JTextField newStudentIdField;
@@ -361,5 +664,7 @@ public class TrackerCardGUI extends javax.swing.JFrame {
     private javax.swing.JTextField newStudentNeededField;
     private javax.swing.JPanel newStudentPanel;
     private javax.swing.JButton studentCardButton;
+    private javax.swing.JButton viewCoursesButton;
+    private javax.swing.JPanel viewCoursesPanel;
     // End of variables declaration//GEN-END:variables
 }
