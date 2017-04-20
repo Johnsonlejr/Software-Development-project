@@ -62,6 +62,15 @@ public class Student implements Serializable
     }
     
     /**
+     * returns the number of credits earned
+     * @return creditsEarned the number of credits the student has
+     */
+    public int getCreditsEarned()
+    {
+        return creditsEarned;
+    }
+ 
+    /**
      * returns the name of the student
      * @return name the name of the student
      */
@@ -77,15 +86,6 @@ public class Student implements Serializable
     public int getId()
     {
         return id;
-    }
-    
-    /**
-     * returns the number of the credits earned by the student
-     * @return creditsEarned the number of credits earned
-     */
-    public int getCreditsEarned()
-    {
-        return creditsEarned;
     }
     
     /**
@@ -113,6 +113,27 @@ public class Student implements Serializable
     public void setCreditsNeeded(int needed)
     {
         creditsNeeded = needed;
+    }
+    
+    /**
+     * sets the number of credits earned by the student
+     * only used if the student starts using the program with credits
+     * @param earned the number of credits earned
+     */
+    public void setCreditsEarned(int earned)
+    {
+        creditsEarned = earned;
+    }
+    
+    /**
+     * sets the GPA of the student
+     * Only usually used if the student starts using the program with an
+     * established GPA
+     * @param currentGpa 
+     */
+    public void setGpa(double currentGpa)
+    {
+        gpa = currentGpa;
     }
     /**
      * calculates the gpa of the student
