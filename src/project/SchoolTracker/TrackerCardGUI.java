@@ -506,7 +506,20 @@ public class TrackerCardGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_newStudentIdFieldActionPerformed
 
     private void createStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createStudentButtonActionPerformed
-        // TODO add your handling code here:
+        Student newStudent = new Student(newStudentNameField.getText(),
+                Integer.parseInt(newStudentIdField.getText()),
+                    Integer.parseInt(newStudentNeededField.getText()));
+        
+        newStudent.setCreditsEarned(Integer.parseInt(newStudentEarnedField.getText()));
+        newStudent.setGpa(Double.parseDouble(newStudentGpaField.getText()));
+        
+        newStudentInfoLabel.setText("Student " + newStudent.getName() + 
+                " was created");
+        
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "mainCoursePanel");
+        
+        System.out.println(newStudent);
     }//GEN-LAST:event_createStudentButtonActionPerformed
 
     private void newStudentNameFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_newStudentNameFieldFocusGained
