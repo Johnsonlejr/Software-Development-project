@@ -131,7 +131,7 @@ public class CourseOffering implements Serializable
     public void addCategory(Category newCategory)
     {
         categories.add(newCategory);
-        calculateGrade();
+        //calculateGrade();
     }
     
     /**
@@ -141,7 +141,7 @@ public class CourseOffering implements Serializable
     {
         grade = Calculator.calculateGrade(categories);
     }
-    //TODO
+    
     public String toString()
     {
        String result = course.getName() + " Grade: " + grade + "\n";
