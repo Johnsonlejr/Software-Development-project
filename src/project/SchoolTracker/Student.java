@@ -13,6 +13,7 @@ package project.SchoolTracker;
  */
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  *
@@ -124,7 +125,24 @@ public class Student implements Serializable
     {
         creditsEarned = earned;
     }
-     
+    
+    public void setGpa(double newGpa)
+    {
+        gpa = newGpa;
+    }
+    
+    public String printArray()
+    {
+        String result = new String("");
+        Iterator<CourseOffering> iter = courses.iterator();
+        while (iter.hasNext())
+        {
+            result += iter.next().toString();
+        }
+        
+        return result;
+    }
+    
     /**
      * calculates the gpa of the student
      */
