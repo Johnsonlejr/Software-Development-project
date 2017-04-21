@@ -5,6 +5,8 @@
  */
 package project.SchoolTracker;
 import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
 import java.util.Calendar;
 /**
  *
@@ -598,6 +600,14 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         card.show(mainPanel, "addCoursesPanel");
     }//GEN-LAST:event_addCourseButtonActionPerformed
 
+    private void viewCourseActionPerformed(ActionEvent event)
+    {
+        JButton button = (JButton) event.getSource();
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, button.getText());
+        
+    }
+    
     private void newCourseNameFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_newCourseNameFieldFocusGained
         // TODO add your handling code here:
     }//GEN-LAST:event_newCourseNameFieldFocusGained
@@ -681,7 +691,35 @@ public class TrackerCardGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_newCourseCreditsFieldActionPerformed
 
     private void addCatagoryFinishButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCatagoryFinishButtonActionPerformed
-        // TODO add your handling code here:
+   
+        String course = newCoursePrefixField.getText() + " " + newCourseCodeField.getText();
+        JButton newButton = new JButton(course);
+        
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        viewCoursesPanel.add(newButton);
+        newButton.addActionListener(new ActionListener() 
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt) 
+            {
+                viewCourseActionPerformed(evt); 
+            }
+        }
+        );
+        
+        JPanel newPanel = new JPanel();
+        newPanel.setLayout(new BorderLayout());
+        
+        JLabel newLabel = new JLabel(course);
+        JButton assignmentButton = new JButton("Add Assignment");
+        newPanel.add(newLabel, BorderLayout.NORTH);
+        newPanel.add(assignmentButton, BorderLayout.SOUTH);
+        
+        mainPanel.add(newPanel, course);
+        viewCoursesPanel.revalidate();
+        card.show(mainPanel, "viewCoursesPanel");
+    
+    
+
     }//GEN-LAST:event_addCatagoryFinishButtonActionPerformed
 
     /**
