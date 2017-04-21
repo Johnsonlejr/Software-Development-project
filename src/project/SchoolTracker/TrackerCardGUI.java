@@ -13,6 +13,7 @@ import java.util.Calendar;
 public class TrackerCardGUI extends javax.swing.JFrame {
 
     private Student newStudent;
+    private CourseOffering newCourseOffering;
     /**
      * Creates new form TrackerCardGUI
      */
@@ -445,6 +446,11 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         addCategoryWeightField.setText("Weight");
 
         addCategoryAddButton.setText("add");
+        addCategoryAddButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addCategoryAddButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout addCategoryPanelLayout = new javax.swing.GroupLayout(addCategoryPanel);
         addCategoryPanel.setLayout(addCategoryPanelLayout);
@@ -677,12 +683,12 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         else
             gradeType = 1;
         
-        CourseOffering newCourseOffering = new CourseOffering(newCourse, start, end,
+        newCourseOffering = new CourseOffering(newCourse, start, end,
             Double.parseDouble(newCourseGradeField.getText()), gradeType,
                 Integer.parseInt(newCourseCreditsField.getText()));
         
         newStudent.addCourse(newCourseOffering);
-        System.out.println(newStudent.printArray());
+        System.out.println(newStudent.printCourses());
         
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "addCatagoryPanel");
@@ -710,8 +716,17 @@ public class TrackerCardGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_newCourseCreditsFieldActionPerformed
 
     private void addCategoryFinishButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCategoryFinishButtonActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_addCategoryFinishButtonActionPerformed
+
+    private void addCategoryAddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCategoryAddButtonActionPerformed
+        Category newCategory = new Category(addCategoryNameField.getText(),
+            Double.parseDouble(addCategoryWeightField.getText()));
+        
+        newCourseOffering.addCategory(newCategory);
+        
+        System.out.println(newStudent.printCourses());
+    }//GEN-LAST:event_addCategoryAddButtonActionPerformed
 
     /**
      * @param args the command line arguments
