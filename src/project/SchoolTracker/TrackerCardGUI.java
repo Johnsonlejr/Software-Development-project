@@ -757,6 +757,7 @@ public class TrackerCardGUI extends javax.swing.JFrame {
 
     }//GEN-LAST:event_addCatagoryFinishButtonActionPerformed
 
+
     private void addCategoryAddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCategoryAddButtonActionPerformed
         Category newCategory = new Category(addCategoryNameField.getText(),
             Double.parseDouble(addCategoryWeightField.getText()));
