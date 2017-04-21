@@ -5,65 +5,28 @@
  */
 package project.SchoolTracker;
 
-/**
- * This represents a course that a student is taking
- * @author Alex
- */
 import java.io.Serializable;
-import java.util.Calendar;
-import java.util.ArrayList;
 
 /**
  *
- * @author Kyle
+ * @author Alexander
  */
-public class Course implements Serializable 
+public class Course implements Serializable
 {
     private String name;
+    private int courseCode;
     private String prefix;
-    private int  courseCode;
     private int credits;
-    private double grade;
-    private int gradeType;
-    private Calendar startDate;
-    private Calendar endDate;
-    private boolean isFinished;
-    private ArrayList categories;
-    /**
-     * Constructor initializes the course
-     * @param name
-     * @param prefix
-     * @param code
-     * @param start
-     * @param end
-     * @param grade
-     * @param gradeType
-     * @param credits 
-     */
-    public Course(String name, String prefix, int code, Calendar start, Calendar end, double grade, int gradeType, int credits)
+    
+    public Course(String name, String prefix, int code, int credits)
     {
         this.name = name;
-        this.prefix = prefix;
         this.courseCode = code;
-        this.startDate = start;
-        this.endDate = end;
-        this.grade = grade;
-        this.gradeType = gradeType;
+        this.prefix = prefix;
         this.credits = credits;
-        isFinished = false;
-        categories = new ArrayList<Category>();
     }
     
-    /**
-     * returns whether or not the course is finished
-     * @return isFinished boolean variable representing if course is finished or not
-     */
-    public boolean isFinished()
-    {
-        return isFinished;
-    }
-    
-    /**
+     /**
      * returns the name of the course
      * @return name the name of the course 
      */
@@ -108,43 +71,7 @@ public class Course implements Serializable
         return credits;
     }
     
-    /**
-     * returns the grade in the class
-     * @return grade the grade in the class
-     */
-    public double getGrade()
-    {
-        return grade;
-    }
-    
-    /**
-     * returns the grade type of the course
-     * @return gradeTyoe the grade type of the class
-     */
-    public int getGradeType()
-    {
-        return gradeType;
-    }
-    
-    /**
-     * returns the start date of the course
-     * @return startDate the start date of the course
-     */
-    public Calendar getStart()
-    {
-        return startDate;
-    }
-    
-    /**
-     * returns the end date of the course
-     * @return endDate the end date of the course
-     */
-    public Calendar getEnd()
-    {
-        return endDate;
-    }
-    
-    /**
+     /**
      * changes the number of credit hours a course is worth
      * @param credits 
      */
@@ -180,58 +107,4 @@ public class Course implements Serializable
         this.prefix = prefix;
     }
     
-    /**
-     * changes the grade type
-     * @param gradeType the new grade type
-     */
-    public void setGradeType(int gradeType)
-    {
-        this.gradeType = gradeType;
-    }
-    
-    /**
-     * changes the end date of the course
-     * @param end the end date of the course
-     */
-    public void setEndDate(Calendar end)
-    {
-        this.endDate = end;
-    }
-    
-    /**
-     * changes the start date of the course
-     * @param start the start date of the course
-     */
-    public void setStartDate(Calendar start)
-    {
-        this.startDate = start;
-    }
-    
-    /**
-     * adds a category to the course
-     * @param newCategory the category being added
-     */
-    public void addCategory(Category newCategory)
-    {
-        categories.add(newCategory);
-        calculateGrade();
-    }
-    
-    /**
-     * calculates the grade of the course
-     */
-    public void calculateGrade()
-    {
-        grade = Calculator.calculateGrade(categories);
-    }
-    //TODO
-    public String toString()
-    {
-       String result = name + " Grade: " + grade + "\n";
-       for (int i = 0; i < categories.size(); i++)
-       {
-           result += categories.get(i).toString() + "\n";
-       }
-       return result;
-    }
 }

@@ -38,7 +38,7 @@ public class Student implements Serializable
         this.name = name;
         this.id = id;
         this.creditsNeeded = creditsNeeded;
-        courses = new ArrayList<Course>(); 
+        courses = new ArrayList<CourseOffering>(); 
         gpa = Calculator.calculateGPA(courses);
         creditsEarned = Calculator.calculateCreditsEarned(courses); 
     }
@@ -124,23 +124,16 @@ public class Student implements Serializable
     {
         creditsEarned = earned;
     }
-    
-    /**
-     * sets the GPA of the student
-     * Only usually used if the student starts using the program with an
-     * established GPA
-     * @param currentGpa 
-     */
-    public void setGpa(double currentGpa)
-    {
-        gpa = currentGpa;
-    }
+     
     /**
      * calculates the gpa of the student
      */
     public void calculateGPA()
     {
-        gpa = Calculator.calculateGPA(courses);
+        if (courses.size() == 0)
+            gpa = 0;
+        else
+            gpa = Calculator.calculateGPA(courses);
     }
     /**
      * calculates the number of credits earned by the student
@@ -154,7 +147,7 @@ public class Student implements Serializable
      * adds a course to students ArrayList of Courses
      * @param newCourse the course being added
      */
-    public void addCourse(Course newCourse)
+    public void addCourse(CourseOffering newCourse)
     {
         courses.add(newCourse);
     }

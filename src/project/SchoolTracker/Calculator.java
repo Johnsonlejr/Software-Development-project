@@ -65,15 +65,15 @@ public class Calculator
      * @return the gpa of the student 
      */
     
-    public static double calculateGPA(ArrayList<Course> list)
+    public static double calculateGPA(ArrayList<CourseOffering> list)
     {
         double hours = 0;
         double points = 0;
-        Course current;
+        CourseOffering current;
         for (int i = 0; i < list.size(); i++)
         {
             current = list.get(i);
-            hours += current.getCredits();
+            hours += current.getCourse().getCredits();
             points += calculateGPAPoints(current);
         }
         return points / hours;
@@ -85,15 +85,15 @@ public class Calculator
      * @return the credits that a student has earned
      */
     
-    public static int calculateCreditsEarned(ArrayList<Course> list)
+    public static int calculateCreditsEarned(ArrayList<CourseOffering> list)
     {
         int creditsEarned = 0;
-        Course current;
+        CourseOffering current;
         for (int i = 0; i < list.size(); i++)
         {
             current = list.get(i);
             if (current.isFinished() && current.getGrade() >= 60)
-                creditsEarned = current.getCredits();
+                creditsEarned = current.getCourse().getCredits();
         }
         return creditsEarned;
     }
@@ -105,9 +105,11 @@ public class Calculator
      * @return the number of grade points earned in the course
      */
     
-    private static double calculateGPAPoints(Course course)
+    private static double calculateGPAPoints(CourseOffering courseOffering)
     {
-        double grade = course.getGrade();
+        Course course = courseOffering.getCourse();
+        
+        double grade = courseOffering.getGrade();
         if (grade < 60)
             return 0;
         else if (grade < 70)

@@ -28,12 +28,12 @@ public class IterationOneTest
         // Creating a student
         Student alex = new Student("Alex", 123456, 124);
         
-        // Creating a Course
+        // Creating a CourseOffering
         Calendar start = Calendar.getInstance();
         start.set(1,1,2016);
         Calendar end = Calendar.getInstance();
         end.set(12,1,2016);
-        Course csci = new Course("Python", "CSCI", 238, start, end , 0, 0, 3);
+        CourseOffering csci = new CourseOffering(238, start, end , 0, 0, 3);
         
         // Adding a course to student
         alex.addCourse(csci);
