@@ -60,8 +60,12 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         newCourseNextButton = new javax.swing.JButton();
         newCourseGradeCombo = new javax.swing.JComboBox<>();
         newCourseFinishedCheck = new javax.swing.JCheckBox();
-        addCatagoryPanel = new javax.swing.JPanel();
-        addCatagoryFinishButton = new javax.swing.JButton();
+        addCategoryPanel = new javax.swing.JPanel();
+        addCategoryFinishButton = new javax.swing.JButton();
+        addCategoryInfoLabel = new javax.swing.JLabel();
+        addCategoryNameField = new javax.swing.JTextField();
+        addCategoryWeightField = new javax.swing.JTextField();
+        addCategoryAddButton = new javax.swing.JButton();
         viewCoursesPanel = new javax.swing.JPanel();
         studentCardButton = new javax.swing.JButton();
         courseCardButton = new javax.swing.JButton();
@@ -427,31 +431,56 @@ public class TrackerCardGUI extends javax.swing.JFrame {
 
         mainPanel.add(addCoursesPanel, "addCoursesPanel");
 
-        addCatagoryFinishButton.setText("Finish");
-        addCatagoryFinishButton.addActionListener(new java.awt.event.ActionListener() {
+        addCategoryFinishButton.setText("Finish");
+        addCategoryFinishButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addCatagoryFinishButtonActionPerformed(evt);
+                addCategoryFinishButtonActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout addCatagoryPanelLayout = new javax.swing.GroupLayout(addCatagoryPanel);
-        addCatagoryPanel.setLayout(addCatagoryPanelLayout);
-        addCatagoryPanelLayout.setHorizontalGroup(
-            addCatagoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addCatagoryPanelLayout.createSequentialGroup()
-                .addContainerGap(181, Short.MAX_VALUE)
-                .addComponent(addCatagoryFinishButton)
+        addCategoryInfoLabel.setText("Add a catagory");
+
+        addCategoryNameField.setText("Catagory Name");
+
+        addCategoryWeightField.setText("Weight");
+
+        addCategoryAddButton.setText("add");
+
+        javax.swing.GroupLayout addCategoryPanelLayout = new javax.swing.GroupLayout(addCategoryPanel);
+        addCategoryPanel.setLayout(addCategoryPanelLayout);
+        addCategoryPanelLayout.setHorizontalGroup(
+            addCategoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addCategoryPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(addCategoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(addCategoryInfoLabel)
+                    .addComponent(addCategoryFinishButton))
                 .addGap(162, 162, 162))
+            .addGroup(addCategoryPanelLayout.createSequentialGroup()
+                .addGap(66, 66, 66)
+                .addComponent(addCategoryNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(addCategoryWeightField, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(addCategoryAddButton)
+                .addContainerGap(93, Short.MAX_VALUE))
         );
-        addCatagoryPanelLayout.setVerticalGroup(
-            addCatagoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addCatagoryPanelLayout.createSequentialGroup()
-                .addContainerGap(195, Short.MAX_VALUE)
-                .addComponent(addCatagoryFinishButton)
+        addCategoryPanelLayout.setVerticalGroup(
+            addCategoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addCategoryPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(addCategoryInfoLabel)
+                .addGap(60, 60, 60)
+                .addGroup(addCategoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(addCategoryNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(addCategoryWeightField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(addCategoryAddButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                .addComponent(addCategoryFinishButton)
                 .addContainerGap())
         );
 
-        mainPanel.add(addCatagoryPanel, "addCatagoryPanel");
+        mainPanel.add(addCategoryPanel, "addCatagoryPanel");
 
         viewCoursesPanel.setPreferredSize(new java.awt.Dimension(402, 229));
         viewCoursesPanel.setRequestFocusEnabled(false);
@@ -680,9 +709,9 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_newCourseCreditsFieldActionPerformed
 
-    private void addCatagoryFinishButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCatagoryFinishButtonActionPerformed
+    private void addCategoryFinishButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCategoryFinishButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_addCatagoryFinishButtonActionPerformed
+    }//GEN-LAST:event_addCategoryFinishButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -720,8 +749,12 @@ public class TrackerCardGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addCatagoryFinishButton;
-    private javax.swing.JPanel addCatagoryPanel;
+    private javax.swing.JButton addCategoryAddButton;
+    private javax.swing.JButton addCategoryFinishButton;
+    private javax.swing.JLabel addCategoryInfoLabel;
+    private javax.swing.JTextField addCategoryNameField;
+    private javax.swing.JPanel addCategoryPanel;
+    private javax.swing.JTextField addCategoryWeightField;
     private javax.swing.JButton addCourseButton;
     private javax.swing.JPanel addCoursesPanel;
     private javax.swing.JButton addStudentButton;
