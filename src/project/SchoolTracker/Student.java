@@ -131,7 +131,7 @@ public class Student implements Serializable
         gpa = newGpa;
     }
     
-    public String printArray()
+    public String printCourses()
     {
         String result = new String("");
         Iterator<CourseOffering> iter = courses.iterator();
@@ -176,6 +176,7 @@ public class Student implements Serializable
      */
     public String toString()
     {
-        return name + " GPA: " + gpa + " CreditsEarned:  " + creditsEarned;
+        return name + " GPA: " + gpa + " CreditsEarned:  " + creditsEarned
+                + "\n" + printCourses();
     }
 }
