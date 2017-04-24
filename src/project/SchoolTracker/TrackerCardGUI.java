@@ -135,7 +135,8 @@ public class TrackerCardGUI extends javax.swing.JFrame {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addAssignmentButtonActionPerformed(evt);
             }
-        })
+        });
+        addAssignmentPanel.add(addAssignmentButton);
 
         mainPanel.add(addAssignmentPanel, "addAssignmentPanel");
 
@@ -805,7 +806,6 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         int grade = Integer.parseInt(assignmentGradeTextField.getText());
         Assignment newAssignment = new Assignment(grade, assignmentNameTextField.getText());
         JLabel assignmentLabel = new JLabel(newAssignment.getName() + ": " + newAssignment.getGrade());
-        
     }//GEN-LAST:event_addAssignmentButtonActionPerformed
 
     /**
