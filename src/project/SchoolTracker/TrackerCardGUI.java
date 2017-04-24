@@ -15,6 +15,7 @@ import java.util.Calendar;
 public class TrackerCardGUI extends javax.swing.JFrame {
 
     private Student newStudent;
+    private CourseOffering newCourseOffering;
     /**
      * Creates new form TrackerCardGUI
      */
@@ -495,6 +496,11 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         addCategoryWeightField.setText("Weight");
 
         addCategoryAddButton.setText("add");
+        addCategoryAddButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addCategoryAddButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout addCategoryPanelLayout = new javax.swing.GroupLayout(addCategoryPanel);
         addCategoryPanel.setLayout(addCategoryPanelLayout);
@@ -510,8 +516,8 @@ public class TrackerCardGUI extends javax.swing.JFrame {
                 .addGap(66, 66, 66)
                 .addComponent(addCategoryNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(addCategoryWeightField, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(addCategoryWeightField, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(addCategoryAddButton)
                 .addContainerGap(93, Short.MAX_VALUE))
         );
@@ -729,12 +735,12 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         else
             gradeType = 1;
         
-        CourseOffering newCourseOffering = new CourseOffering(newCourse, start, end,
+        newCourseOffering = new CourseOffering(newCourse, start, end,
             Double.parseDouble(newCourseGradeField.getText()), gradeType,
                 Integer.parseInt(newCourseCreditsField.getText()));
         
         newStudent.addCourse(newCourseOffering);
-        System.out.println(newStudent.printArray());
+        System.out.println(newStudent);
         
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "addCategoryPanel");
@@ -801,13 +807,14 @@ public class TrackerCardGUI extends javax.swing.JFrame {
 
     }//GEN-LAST:event_addCatagoryFinishButtonActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    private void addCategoryAddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCategoryAddButtonActionPerformed
+        Category newCategory = new Category(addCategoryNameField.getText(),
+            Double.parseDouble(addCategoryWeightField.getText()));
+        
+        newCourseOffering.addCategory(newCategory);
+        
+        System.out.println(newStudent);
+    }//GEN-LAST:event_addCategoryAddButtonActionPerformed
 
     /**
      * @param args the command line arguments
