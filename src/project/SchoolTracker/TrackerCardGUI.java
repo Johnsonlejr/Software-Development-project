@@ -32,13 +32,15 @@ public class TrackerCardGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        categories = new javax.swing.ButtonGroup();
         mainPanel = new javax.swing.JPanel();
         defaultPanel = new javax.swing.JPanel();
         addStudentButton = new javax.swing.JButton();
         loadStudentButton = new javax.swing.JButton();
         addAssignmentPanel = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        assignmentNameTextField = new javax.swing.JTextField();
+        assignmentGradeTextField = new javax.swing.JTextField();
+        addAssignmentButton = new javax.swing.JButton();
         newStudentPanel = new javax.swing.JPanel();
         newStudentInfoLabel = new javax.swing.JLabel();
         newStudentNameField = new javax.swing.JTextField();
@@ -122,30 +124,18 @@ public class TrackerCardGUI extends javax.swing.JFrame {
 
         mainPanel.add(defaultPanel, "defaultPanel");
 
-        jTextField1.setText("Assignment name");
+        assignmentNameTextField.setText("Assignment name");
+        addAssignmentPanel.add(assignmentNameTextField);
 
-        jTextField2.setText("Assignment grade");
+        assignmentGradeTextField.setText("Assignment grade");
+        addAssignmentPanel.add(assignmentGradeTextField);
 
-        javax.swing.GroupLayout addAssignmentPanelLayout = new javax.swing.GroupLayout(addAssignmentPanel);
-        addAssignmentPanel.setLayout(addAssignmentPanelLayout);
-        addAssignmentPanelLayout.setHorizontalGroup(
-            addAssignmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(addAssignmentPanelLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58))
-        );
-        addAssignmentPanelLayout.setVerticalGroup(
-            addAssignmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(addAssignmentPanelLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addGroup(addAssignmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(204, Short.MAX_VALUE))
-        );
+        addAssignmentButton.setText("Add Assignment");
+        addAssignmentButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addAssignmentButtonActionPerformed(evt);
+            }
+        })
 
         mainPanel.add(addAssignmentPanel, "addAssignmentPanel");
 
@@ -803,8 +793,20 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         
         newCourseOffering.addCategory(newCategory);
         
+        JRadioButton newButton = new JRadioButton(newCategory.getName());
+        categories.add(newButton);
+        addAssignmentPanel.add(newButton); 
+        addAssignmentPanel.revalidate();
+        
         System.out.println(newStudent);
     }//GEN-LAST:event_addCategoryAddButtonActionPerformed
+
+    private void addAssignmentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addAssignmentButtonActionPerformed
+        int grade = Integer.parseInt(assignmentGradeTextField.getText());
+        Assignment newAssignment = new Assignment(grade, assignmentNameTextField.getText());
+        JLabel assignmentLabel = new JLabel(newAssignment.getName() + ": " + newAssignment.getGrade());
+        
+    }//GEN-LAST:event_addAssignmentButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -842,6 +844,7 @@ public class TrackerCardGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addAssignmentButton;
     private javax.swing.JPanel addAssignmentPanel;
     private javax.swing.JButton addCategoryAddButton;
     private javax.swing.JButton addCategoryFinishButton;
@@ -852,12 +855,13 @@ public class TrackerCardGUI extends javax.swing.JFrame {
     private javax.swing.JButton addCourseButton;
     private javax.swing.JPanel addCoursesPanel;
     private javax.swing.JButton addStudentButton;
+    private javax.swing.JTextField assignmentGradeTextField;
+    private javax.swing.JTextField assignmentNameTextField;
     private javax.swing.JButton calculatorCardButton;
+    private javax.swing.ButtonGroup categories;
     private javax.swing.JButton courseCardButton;
     private javax.swing.JButton createStudentButton;
     private javax.swing.JPanel defaultPanel;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JButton loadButton;
     private javax.swing.JButton loadStudentButton;
     private javax.swing.JTextField loadStudentIdField;
@@ -888,10 +892,4 @@ public class TrackerCardGUI extends javax.swing.JFrame {
     private javax.swing.JButton viewCoursesButton;
     private javax.swing.JPanel viewCoursesPanel;
     // End of variables declaration//GEN-END:variables
-    //private JPanel addCategoryPanel;
-    //private JButton addCategoryFinishButton;
-    //private JLabel addCategoryInfoLabel;
-    //private JTextField addCategoryNameField;
-    //private JTextField addCategoryWeightField;
-    //private JButton addCategoryAddButton;
 }
