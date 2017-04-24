@@ -162,17 +162,11 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Assignment name"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField2">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Assignment grade"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField2ActionPerformed"/>
-              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -589,7 +583,7 @@
         <Container class="javax.swing.JPanel" name="addCategoryPanel">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-              <CardConstraints cardName="addCatagoryPanel"/>
+              <CardConstraints cardName="addCategoryPanel"/>
             </Constraint>
           </Constraints>
 

@@ -123,18 +123,8 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         mainPanel.add(defaultPanel, "defaultPanel");
 
         jTextField1.setText("Assignment name");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
 
         jTextField2.setText("Assignment grade");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout addAssignmentPanelLayout = new javax.swing.GroupLayout(addAssignmentPanel);
         addAssignmentPanel.setLayout(addAssignmentPanelLayout);
@@ -489,13 +479,6 @@ public class TrackerCardGUI extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout addCatagoryPanelLayout = new javax.swing.GroupLayout(addCatagoryPanel);
-        addCatagoryPanel.setLayout(addCatagoryPanelLayout);
-        addCatagoryPanelLayout.setHorizontalGroup(
-            addCatagoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addCatagoryPanelLayout.createSequentialGroup()
-                .addContainerGap(218, Short.MAX_VALUE)
-                .addComponent(addCatagoryFinishButton)
         addCategoryInfoLabel.setText("Add a catagory");
 
         addCategoryNameField.setText("Catagory Name");
@@ -543,7 +526,7 @@ public class TrackerCardGUI extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        mainPanel.add(addCategoryPanel, "addCatagoryPanel");
+        mainPanel.add(addCategoryPanel, "addCategoryPanel");
 
         viewCoursesPanel.setPreferredSize(new java.awt.Dimension(402, 229));
         viewCoursesPanel.setRequestFocusEnabled(false);
@@ -860,8 +843,12 @@ public class TrackerCardGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel addAssignmentPanel;
-    private javax.swing.JButton addCatagoryFinishButton;
-    private javax.swing.JPanel addCatagoryPanel;
+    private javax.swing.JButton addCategoryAddButton;
+    private javax.swing.JButton addCategoryFinishButton;
+    private javax.swing.JLabel addCategoryInfoLabel;
+    private javax.swing.JTextField addCategoryNameField;
+    private javax.swing.JPanel addCategoryPanel;
+    private javax.swing.JTextField addCategoryWeightField;
     private javax.swing.JButton addCourseButton;
     private javax.swing.JPanel addCoursesPanel;
     private javax.swing.JButton addStudentButton;
@@ -901,10 +888,10 @@ public class TrackerCardGUI extends javax.swing.JFrame {
     private javax.swing.JButton viewCoursesButton;
     private javax.swing.JPanel viewCoursesPanel;
     // End of variables declaration//GEN-END:variables
-    private JPanel addCategoryPanel;
-    private JButton addCategoryFinishButton;
-    private JLabel addCategoryInfoLabel;
-    private JTextField addCategoryNameField;
-    private JTextField addCategoryWeightField;
-    private JButton addCategoryAddButton;
+    //private JPanel addCategoryPanel;
+    //private JButton addCategoryFinishButton;
+    //private JLabel addCategoryInfoLabel;
+    //private JTextField addCategoryNameField;
+    //private JTextField addCategoryWeightField;
+    //private JButton addCategoryAddButton;
 }
