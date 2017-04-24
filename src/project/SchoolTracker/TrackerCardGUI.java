@@ -135,8 +135,7 @@ public class TrackerCardGUI extends javax.swing.JFrame {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addAssignmentButtonActionPerformed(evt);
             }
-        });
-        addAssignmentPanel.add(addAssignmentButton);
+        })
 
         mainPanel.add(addAssignmentPanel, "addAssignmentPanel");
 
@@ -893,5 +892,4 @@ public class TrackerCardGUI extends javax.swing.JFrame {
     private javax.swing.JButton viewCoursesButton;
     private javax.swing.JPanel viewCoursesPanel;
     // End of variables declaration//GEN-END:variables
-
 }
