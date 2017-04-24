@@ -586,7 +586,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="addCatagoryPanel">
+        <Container class="javax.swing.JPanel" name="addCategoryPanel">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
               <CardConstraints cardName="addCatagoryPanel"/>
@@ -597,30 +597,70 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="218" max="32767" attributes="0"/>
-                      <Component id="addCatagoryFinishButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="addCategoryInfoLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="addCategoryFinishButton" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace min="-2" pref="162" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                      <Component id="addCategoryNameField" min="-2" pref="116" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="addCategoryWeightField" min="-2" pref="48" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="addCategoryAddButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="93" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="195" max="32767" attributes="0"/>
-                      <Component id="addCatagoryFinishButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="addCategoryInfoLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="addCategoryNameField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addCategoryWeightField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addCategoryAddButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="87" max="32767" attributes="0"/>
+                      <Component id="addCategoryFinishButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="addCatagoryFinishButton">
+            <Component class="javax.swing.JButton" name="addCategoryFinishButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Finish"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addCatagoryFinishButtonActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addCategoryFinishButtonActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="addCategoryInfoLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Add a catagory"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="addCategoryNameField">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Catagory Name"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="addCategoryWeightField">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Weight"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="addCategoryAddButton">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="add"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
