@@ -147,7 +147,6 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Assignment grade"/>
               </Properties>
-              
             </Component>
             <Component class="javax.swing.JButton" name="addAssignmentButton">
               <Properties>
@@ -156,7 +155,6 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addAssignmentButtonActionPerformed"/>
               </Events>
-              
             </Component>
           </SubComponents>
         </Container>
