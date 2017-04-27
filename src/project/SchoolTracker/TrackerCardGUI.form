@@ -129,35 +129,6 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="addAssignmentPanel">
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-              <CardConstraints cardName="addAssignmentPanel"/>
-            </Constraint>
-          </Constraints>
-
-          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
-          <SubComponents>
-            <Component class="javax.swing.JTextField" name="assignmentNameTextField">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Assignment name"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="assignmentGradeTextField">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Assignment grade"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="addAssignmentButton">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Add Assignment"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addAssignmentButtonActionPerformed"/>
-              </Events>
-            </Component>
-          </SubComponents>
-        </Container>
         <Container class="javax.swing.JPanel" name="newStudentPanel">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
@@ -485,7 +456,6 @@
               </Properties>
               <Events>
                 <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="newCourseNameFieldFocusGained"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="newCourseNameFieldActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="newCoursePrefixField">
@@ -494,7 +464,6 @@
               </Properties>
               <Events>
                 <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="newCoursePrefixFieldFocusGained"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="newCoursePrefixFieldActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="newCourseCodeField">
@@ -503,7 +472,6 @@
               </Properties>
               <Events>
                 <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="newCourseCodeFieldFocusGained"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="newCourseCodeFieldActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="newCourseStartField">
@@ -528,7 +496,6 @@
               </Properties>
               <Events>
                 <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="newCourseGradeFieldFocusGained"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="newCourseGradeFieldActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="newCourseCreditsField">
@@ -537,7 +504,6 @@
               </Properties>
               <Events>
                 <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="newCourseCreditsFieldFocusGained"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="newCourseCreditsFieldActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="newCourseNextButton">
@@ -663,6 +629,35 @@
           </Constraints>
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
+        </Container>
+        <Container class="javax.swing.JPanel" name="addAssignmentPanel">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="addAssignmentPanel"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTextField" name="assignmentNameTextField">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Assignment name"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="assignmentGradeTextField">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Assignment grade"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="addAssignmentButton">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Add Assignment"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addAssignmentButtonActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
         </Container>
       </SubComponents>
     </Container>

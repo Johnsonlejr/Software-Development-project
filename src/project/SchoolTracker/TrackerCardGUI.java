@@ -37,10 +37,6 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         defaultPanel = new javax.swing.JPanel();
         addStudentButton = new javax.swing.JButton();
         loadStudentButton = new javax.swing.JButton();
-        addAssignmentPanel = new javax.swing.JPanel();
-        assignmentNameTextField = new javax.swing.JTextField();
-        assignmentGradeTextField = new javax.swing.JTextField();
-        addAssignmentButton = new javax.swing.JButton();
         newStudentPanel = new javax.swing.JPanel();
         newStudentInfoLabel = new javax.swing.JLabel();
         newStudentNameField = new javax.swing.JTextField();
@@ -76,6 +72,10 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         addCategoryWeightField = new javax.swing.JTextField();
         addCategoryAddButton = new javax.swing.JButton();
         viewCoursesPanel = new javax.swing.JPanel();
+        addAssignmentPanel = new javax.swing.JPanel();
+        assignmentNameTextField = new javax.swing.JTextField();
+        assignmentGradeTextField = new javax.swing.JTextField();
+        addAssignmentButton = new javax.swing.JButton();
         studentCardButton = new javax.swing.JButton();
         courseCardButton = new javax.swing.JButton();
         calculatorCardButton = new javax.swing.JButton();
@@ -123,22 +123,6 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         );
 
         mainPanel.add(defaultPanel, "defaultPanel");
-
-        assignmentNameTextField.setText("Assignment name");
-        addAssignmentPanel.add(assignmentNameTextField);
-
-        assignmentGradeTextField.setText("Assignment grade");
-        addAssignmentPanel.add(assignmentGradeTextField);
-
-        addAssignmentButton.setText("Add Assignment");
-        addAssignmentButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addAssignmentButtonActionPerformed(evt);
-            }
-        });
-        addAssignmentPanel.add(addAssignmentButton);
-
-        mainPanel.add(addAssignmentPanel, "addAssignmentPanel");
 
         newStudentInfoLabel.setText("Enter student information");
 
@@ -323,11 +307,6 @@ public class TrackerCardGUI extends javax.swing.JFrame {
                 newCourseNameFieldFocusGained(evt);
             }
         });
-        newCourseNameField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                newCourseNameFieldActionPerformed(evt);
-            }
-        });
 
         newCoursePrefixField.setText("Prefix");
         newCoursePrefixField.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -335,21 +314,11 @@ public class TrackerCardGUI extends javax.swing.JFrame {
                 newCoursePrefixFieldFocusGained(evt);
             }
         });
-        newCoursePrefixField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                newCoursePrefixFieldActionPerformed(evt);
-            }
-        });
 
         newCourseCodeField.setText("Code");
         newCourseCodeField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 newCourseCodeFieldFocusGained(evt);
-            }
-        });
-        newCourseCodeField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                newCourseCodeFieldActionPerformed(evt);
             }
         });
 
@@ -373,21 +342,11 @@ public class TrackerCardGUI extends javax.swing.JFrame {
                 newCourseGradeFieldFocusGained(evt);
             }
         });
-        newCourseGradeField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                newCourseGradeFieldActionPerformed(evt);
-            }
-        });
 
         newCourseCreditsField.setText("Credits");
         newCourseCreditsField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 newCourseCreditsFieldFocusGained(evt);
-            }
-        });
-        newCourseCreditsField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                newCourseCreditsFieldActionPerformed(evt);
             }
         });
 
@@ -523,6 +482,22 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         viewCoursesPanel.setRequestFocusEnabled(false);
         mainPanel.add(viewCoursesPanel, "viewCoursesPanel");
 
+        assignmentNameTextField.setText("Assignment name");
+        addAssignmentPanel.add(assignmentNameTextField);
+
+        assignmentGradeTextField.setText("Assignment grade");
+        addAssignmentPanel.add(assignmentGradeTextField);
+
+        addAssignmentButton.setText("Add Assignment");
+        addAssignmentButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addAssignmentButtonActionPerformed(evt);
+            }
+        });
+        addAssignmentPanel.add(addAssignmentButton);
+
+        mainPanel.add(addAssignmentPanel, "addAssignmentPanel");
+
         studentCardButton.setText("Student");
         studentCardButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -601,21 +576,26 @@ public class TrackerCardGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_newStudentIdFieldActionPerformed
 
     private void createStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createStudentButtonActionPerformed
-        newStudent = new Student(newStudentNameField.getText(),
-            Integer.parseInt(newStudentIdField.getText()),
-                Integer.parseInt(newStudentNeededField.getText()));
+        try{
+            newStudent = new Student(newStudentNameField.getText(),
+                Integer.parseInt(newStudentIdField.getText()),
+                    Integer.parseInt(newStudentNeededField.getText()));
         
-        newStudent.setCreditsEarned(Integer.parseInt(newStudentEarnedField.getText()));
-        newStudent.setGpa(Double.parseDouble(newStudentGpaField.getText()));
+            newStudent.setCreditsEarned(Integer.parseInt(newStudentEarnedField.getText()));
+            newStudent.setGpa(Double.parseDouble(newStudentGpaField.getText()));
         
-        newStudentInfoLabel.setText("Student " + newStudent.getName() + 
-                " was created");
+            newStudentInfoLabel.setText("Student " + newStudent.getName() + 
+                    " was created");
         
-        CardLayout card = (CardLayout)mainPanel.getLayout();
-        card.show(mainPanel, "mainCoursePanel");
-        nameLabel.setText("Hello, " + newStudent.getName());
+            CardLayout card = (CardLayout)mainPanel.getLayout();
+            card.show(mainPanel, "mainCoursePanel");
+            nameLabel.setText("Hello, " + newStudent.getName());
         
-        System.out.println(newStudent);
+            System.out.println(newStudent);
+        }catch(NumberFormatException e){
+            newStudentInfoLabel.setText("Please enter numbers for ID, GPA, Credits Earned, "
+                    + "and Credits Needed");
+        }
     }//GEN-LAST:event_createStudentButtonActionPerformed
 
     private void newStudentNameFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_newStudentNameFieldFocusGained
@@ -667,31 +647,23 @@ public class TrackerCardGUI extends javax.swing.JFrame {
            card.show(mainPanel, "addAssignmentPanel");
     }
     private void newCourseNameFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_newCourseNameFieldFocusGained
-        // TODO add your handling code here:
+        newCourseNameField.setText("");
     }//GEN-LAST:event_newCourseNameFieldFocusGained
 
-    private void newCourseNameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newCourseNameFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_newCourseNameFieldActionPerformed
-
     private void newCoursePrefixFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_newCoursePrefixFieldFocusGained
-        // TODO add your handling code here:
+        newCoursePrefixField.setText("");
     }//GEN-LAST:event_newCoursePrefixFieldFocusGained
 
-    private void newCoursePrefixFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newCoursePrefixFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_newCoursePrefixFieldActionPerformed
-
     private void newCourseCodeFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_newCourseCodeFieldFocusGained
-        // TODO add your handling code here:
+        newCourseCodeField.setText("");
     }//GEN-LAST:event_newCourseCodeFieldFocusGained
 
     private void newCourseStartFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_newCourseStartFieldFocusGained
-        // TODO add your handling code here:
+        newCourseStartField.setText("");
     }//GEN-LAST:event_newCourseStartFieldFocusGained
 
     private void newCourseEndFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_newCourseEndFieldFocusGained
-        // TODO add your handling code here:
+        newCourseEndField.setText("");
     }//GEN-LAST:event_newCourseEndFieldFocusGained
 
     private void newCourseNextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newCourseNextButtonActionPerformed
@@ -728,25 +700,13 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         
     }//GEN-LAST:event_newCourseNextButtonActionPerformed
 
-    private void newCourseCodeFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newCourseCodeFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_newCourseCodeFieldActionPerformed
-
     private void newCourseGradeFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_newCourseGradeFieldFocusGained
-        // TODO add your handling code here:
+        newCourseGradeField.setText("");
     }//GEN-LAST:event_newCourseGradeFieldFocusGained
 
-    private void newCourseGradeFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newCourseGradeFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_newCourseGradeFieldActionPerformed
-
     private void newCourseCreditsFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_newCourseCreditsFieldFocusGained
-        // TODO add your handling code here:
+        newCourseCreditsField.setText("");
     }//GEN-LAST:event_newCourseCreditsFieldFocusGained
-
-    private void newCourseCreditsFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newCourseCreditsFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_newCourseCreditsFieldActionPerformed
 
     private void addCatagoryFinishButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCatagoryFinishButtonActionPerformed
    
@@ -783,6 +743,15 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         mainPanel.add(newPanel, course);
         viewCoursesPanel.revalidate();
         card.show(mainPanel, "viewCoursesPanel");
+        
+        newCourseNameField.setText("Name");
+        newCourseGradeField.setText("Grade");
+        newCourseStartField.setText("Start Date(mm, yyy)");
+        newCourseEndField.setText("End Date(mm, yyyy)");
+        newCourseCreditsField.setText("Credits");
+        newCourseCodeField.setText("Code");
+        newCoursePrefixField.setText("Prefix");
+        
     
     
 
