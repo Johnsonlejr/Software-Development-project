@@ -8,6 +8,7 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 import java.util.Calendar;
+import java.io.*;
 /**
  *
  * @author Kyle
@@ -79,6 +80,7 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         studentCardButton = new javax.swing.JButton();
         courseCardButton = new javax.swing.JButton();
         calculatorCardButton = new javax.swing.JButton();
+        saveProgressButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Course Tracker");
@@ -226,6 +228,11 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         loadStudentInfoLabel.setText("Enter student ID");
 
         loadButton.setText("Load");
+        loadButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loadButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout loadStudentPanelLayout = new javax.swing.GroupLayout(loadStudentPanel);
         loadStudentPanel.setLayout(loadStudentPanelLayout);
@@ -514,17 +521,26 @@ public class TrackerCardGUI extends javax.swing.JFrame {
 
         calculatorCardButton.setText("Calculator");
 
+        saveProgressButton.setText("Save Progress");
+        saveProgressButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveProgressButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(studentCardButton)
-                .addGap(86, 86, 86)
-                .addComponent(courseCardButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
-                .addComponent(calculatorCardButton)
+                .addComponent(saveProgressButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addComponent(studentCardButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(courseCardButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(calculatorCardButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -539,7 +555,8 @@ public class TrackerCardGUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(studentCardButton)
                     .addComponent(courseCardButton)
-                    .addComponent(calculatorCardButton))
+                    .addComponent(calculatorCardButton)
+                    .addComponent(saveProgressButton))
                 .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -596,6 +613,8 @@ public class TrackerCardGUI extends javax.swing.JFrame {
             newStudentInfoLabel.setText("Please enter numbers for ID, GPA, Credits Earned, "
                     + "and Credits Needed");
         }
+        
+        saveStudent(newStudent);
     }//GEN-LAST:event_createStudentButtonActionPerformed
 
     private void newStudentNameFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_newStudentNameFieldFocusGained
@@ -777,6 +796,14 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         JLabel assignmentLabel = new JLabel(newAssignment.getName() + ": " + newAssignment.getGrade());
     }//GEN-LAST:event_addAssignmentButtonActionPerformed
 
+    private void saveProgressButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveProgressButtonActionPerformed
+        saveStudent(newStudent);
+    }//GEN-LAST:event_saveProgressButtonActionPerformed
+
+    private void loadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadButtonActionPerformed
+        loadStudent(loadStudentIdField.getText());
+    }//GEN-LAST:event_loadButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -810,6 +837,34 @@ public class TrackerCardGUI extends javax.swing.JFrame {
                 new TrackerCardGUI().setVisible(true);
             }
         });
+    }
+    
+    public void saveStudent(Student newStudent){
+        try{
+            FileOutputStream fileOut = 
+                    new FileOutputStream("src/project/SchoolTracker/" + newStudent.getId() + ".ser");
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(newStudent);
+            out.close();
+            fileOut.close();
+        }catch (IOException e){
+            System.err.println(e);
+        }
+    }
+    
+    public void loadStudent(String studentId){
+        try{
+            FileInputStream fileIn = 
+                    new FileInputStream("src/project/SchoolTracker/" + studentId + ".ser");
+            ObjectInputStream in = new ObjectInputStream(fileIn);
+            newStudent = (Student) in.readObject();
+            in.close();
+            fileIn.close();
+        }catch (IOException e){
+            System.err.println(e);
+        }catch (ClassNotFoundException e){
+            System.err.println(e);
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -857,6 +912,7 @@ public class TrackerCardGUI extends javax.swing.JFrame {
     private javax.swing.JTextField newStudentNameField;
     private javax.swing.JTextField newStudentNeededField;
     private javax.swing.JPanel newStudentPanel;
+    private javax.swing.JButton saveProgressButton;
     private javax.swing.JButton studentCardButton;
     private javax.swing.JButton viewCoursesButton;
     private javax.swing.JPanel viewCoursesPanel;
