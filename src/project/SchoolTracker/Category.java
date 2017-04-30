@@ -10,12 +10,13 @@ package project.SchoolTracker;
  * @author Alexander
  */
 import java.util.ArrayList;
+import java.io.Serializable; 
 
 /**
  *
  * @author Kyle
  */
-public class Category 
+public class Category implements Serializable
 {
     private double weight;
     private String name;
