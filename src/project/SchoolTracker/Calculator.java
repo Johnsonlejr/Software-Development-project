@@ -101,7 +101,7 @@ public class Calculator
         for (int i = 0; i < list.size(); i++)
         {
             current = list.get(i);
-            if (current.isFinished() && (current.getGrade() >= 60 || current.getBGrade()))
+            if (current.isFinished() && (current.getGrade() >= 60))
                 creditsEarned = current.getCourse().getCredits();
         }
         return creditsEarned;
