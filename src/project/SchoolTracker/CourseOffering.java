@@ -37,18 +37,13 @@ public class CourseOffering implements Serializable
         this.course = course;
         this.gradeType = gradeType;
         isFinished = finished;
-        this.grade = grade;
+        if (gradeType == 0 && grade  == 0)
+            this.grade = 60;
+        else 
+            this.grade = 0;
         categories = new ArrayList<Category>();
     }
     
-    public CourseOffering(Course course,int gradeType, boolean finished, boolean grade)
-    {
-        this.course = course;
-        this.gradeType = gradeType;
-        bGrade = grade;
-        isFinished = false;
-        categories = new ArrayList<Category>();
-    }
     /**
      * returns whether or not the course is finished
      * @return isFinished boolean variable representing if course is finished or not
