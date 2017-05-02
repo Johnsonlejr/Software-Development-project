@@ -174,8 +174,7 @@ public class Student implements Serializable
     {
         int i;
         for (i = 0; i < courses.size() && !courses.get(i).equals(name); i++)
-        {
-        }
+            ;
         CourseOffering result = (CourseOffering) courses.get(i);
         return result;
     }
