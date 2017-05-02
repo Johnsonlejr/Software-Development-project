@@ -22,9 +22,8 @@ public class CourseOffering implements Serializable
     private Course course;
     private double grade;
     private int gradeType;
-    private Calendar startDate;
-    private Calendar endDate;
     private boolean isFinished;
+    private boolean bGrade;
     private ArrayList categories;
     /**
      * Constructor initializes the course
@@ -33,18 +32,23 @@ public class CourseOffering implements Serializable
      * @param grade
      * @param gradeType
      */
-    public CourseOffering(Course course, Calendar start, Calendar end, double grade, int gradeType
-    )
+    public CourseOffering(Course course, int gradeType, boolean finished, double grade)
     {
         this.course = course;
-        this.startDate = start;
-        this.endDate = end;
-        this.grade = grade;
         this.gradeType = gradeType;
-        isFinished = false;
+        isFinished = finished;
+        this.grade = grade;
         categories = new ArrayList<Category>();
     }
     
+    public CourseOffering(Course course,int gradeType, boolean finished, boolean grade)
+    {
+        this.course = course;
+        this.gradeType = gradeType;
+        bGrade = grade;
+        isFinished = false;
+        categories = new ArrayList<Category>();
+    }
     /**
      * returns whether or not the course is finished
      * @return isFinished boolean variable representing if course is finished or not
@@ -81,24 +85,6 @@ public class CourseOffering implements Serializable
     }
     
     /**
-     * returns the start date of the course
-     * @return startDate the start date of the course
-     */
-    public Calendar getStart()
-    {
-        return startDate;
-    }
-    
-    /**
-     * returns the end date of the course
-     * @return endDate the end date of the course
-     */
-    public Calendar getEnd()
-    {
-        return endDate;
-    }
-    
-    /**
      * changes the grade type
      * @param gradeType the new grade type
      */
@@ -111,18 +97,9 @@ public class CourseOffering implements Serializable
      * changes the end date of the course
      * @param end the end date of the course
      */
-    public void setEndDate(Calendar end)
+    public void setFinished(boolean finished)
     {
-        this.endDate = end;
-    }
-    1
-    /**
-     * changes the start date of the course
-     * @param start the start date of the course
-     */
-    public void setStartDate(Calendar start)
-    {
-        this.startDate = start;
+        isFinished = finished;
     }
     
     /**
