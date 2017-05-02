@@ -41,12 +41,13 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         addStudentButton = new javax.swing.JButton();
         loadStudentButton = new javax.swing.JButton();
         newStudentPanel = new javax.swing.JPanel();
-        newStudentInfoLabel = new javax.swing.JLabel();
         newStudentNameField = new javax.swing.JTextField();
         newStudentIdField = new javax.swing.JTextField();
         newStudentEarnedField = new javax.swing.JTextField();
         newStudentNeededField = new javax.swing.JTextField();
         createStudentButton = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        newStudentTextArea = new javax.swing.JTextArea();
         loadStudentPanel = new javax.swing.JPanel();
         loadStudentInfoLabel = new javax.swing.JLabel();
         loadStudentIdField = new javax.swing.JTextField();
@@ -107,12 +108,12 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         defaultPanel.setLayout(defaultPanelLayout);
         defaultPanelLayout.setHorizontalGroup(
             defaultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(defaultPanelLayout.createSequentialGroup()
-                .addGap(150, 150, 150)
-                .addGroup(defaultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(addStudentButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(loadStudentButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(188, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, defaultPanelLayout.createSequentialGroup()
+                .addContainerGap(176, Short.MAX_VALUE)
+                .addGroup(defaultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(loadStudentButton)
+                    .addComponent(addStudentButton, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(162, 162, 162))
         );
         defaultPanelLayout.setVerticalGroup(
             defaultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,8 +126,6 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         );
 
         mainPanel.add(defaultPanel, "defaultPanel");
-
-        newStudentInfoLabel.setText("Enter student information");
 
         newStudentNameField.setText("Name");
         newStudentNameField.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -173,43 +172,55 @@ public class TrackerCardGUI extends javax.swing.JFrame {
             }
         });
 
+        newStudentTextArea.setColumns(20);
+        newStudentTextArea.setRows(5);
+        newStudentTextArea.setText("Please enter your information.\n"
+            + "If you have existing credits please only enter\n"
+            + "the credits that will not effect your GPA.\n"
+            + "If no existing credits, enter 0.");
+        jScrollPane2.setViewportView(newStudentTextArea);
+
         javax.swing.GroupLayout newStudentPanelLayout = new javax.swing.GroupLayout(newStudentPanel);
         newStudentPanel.setLayout(newStudentPanelLayout);
         newStudentPanelLayout.setHorizontalGroup(
             newStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(newStudentPanelLayout.createSequentialGroup()
-                .addGap(126, 126, 126)
-                .addComponent(newStudentInfoLabel)
-                .addGap(91, 91, 91))
-            .addGroup(newStudentPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(newStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(newStudentIdField, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(newStudentNameField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 135, Short.MAX_VALUE)
+                .addGap(71, 71, 71)
                 .addGroup(newStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(newStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(newStudentNeededField, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
-                        .addComponent(newStudentEarnedField))
-                    .addComponent(createStudentButton))
-                .addGap(83, 83, 83))
+                    .addGroup(newStudentPanelLayout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, newStudentPanelLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(newStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(newStudentIdField, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(newStudentNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                        .addGroup(newStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(newStudentNeededField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(newStudentEarnedField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(91, 91, 91))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, newStudentPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(createStudentButton)
+                .addGap(161, 161, 161))
         );
         newStudentPanelLayout.setVerticalGroup(
             newStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(newStudentPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(newStudentInfoLabel)
-                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53)
                 .addGroup(newStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(newStudentNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(newStudentEarnedField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(newStudentEarnedField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(newStudentNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(newStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(newStudentIdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(newStudentNeededField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(createStudentButton)
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         mainPanel.add(newStudentPanel, "newStudentPanel");
@@ -229,12 +240,12 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         loadStudentPanelLayout.setHorizontalGroup(
             loadStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loadStudentPanelLayout.createSequentialGroup()
-                .addContainerGap(187, Short.MAX_VALUE)
-                .addGroup(loadStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(loadStudentInfoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(loadStudentIdField)
-                    .addComponent(loadButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(166, 166, 166))
+                .addContainerGap(183, Short.MAX_VALUE)
+                .addGroup(loadStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(loadStudentInfoLabel)
+                    .addComponent(loadStudentIdField, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(loadButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(170, 170, 170))
         );
         loadStudentPanelLayout.setVerticalGroup(
             loadStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -523,7 +534,7 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(308, Short.MAX_VALUE)
+                .addContainerGap(314, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(studentCardButton)
                     .addComponent(courseCardButton)
@@ -572,9 +583,6 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         
             //newStudent.setCreditsEarned(Integer.parseInt(newStudentEarnedField.getText()));
             //newStudent.setGpa(Double.parseDouble(newStudentGpaField.getText()));
-        
-            newStudentInfoLabel.setText("Student " + newStudent.getName() + 
-                    " was created");
         
             CardLayout card = (CardLayout)mainPanel.getLayout();
             card.show(mainPanel, "mainCoursePanel");
@@ -650,31 +658,41 @@ public class TrackerCardGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_newCourseCodeFieldFocusGained
 
     private void newCourseNextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newCourseNextButtonActionPerformed
-        Course newCourse = new Course(newCourseNameField.getText(),
-            newCoursePrefixField.getText(), Integer.parseInt(newCourseCodeField.getText()),
-                Integer.parseInt(newCourseCreditsField.getText()));
+        try{
+            Course newCourse = new Course(newCourseNameField.getText(),
+                newCoursePrefixField.getText(), Integer.parseInt(newCourseCodeField.getText()),
+                    Integer.parseInt(newCourseCreditsField.getText()));
         
-        int gradeType = 0;
-        String gradeTypeChoice = (String) newCourseGradeCombo.getSelectedItem();
-        if (gradeTypeChoice.equals("Classic"))
-            gradeType = 0;
-        else
-            gradeType = 1;
+            int gradeType = 0;
+            String gradeTypeChoice = (String) newCourseGradeCombo.getSelectedItem();
+            if (gradeTypeChoice.equals("Classic"))
+                gradeType = 0;
+            else
+                gradeType = 1;
         
-        boolean isFinished;
-        if (newCourseFinishedCheck.isSelected())
-            isFinished = true;
-        else
-            isFinished = false;
+            boolean isFinished;
+            if (newCourseFinishedCheck.isSelected())
+                isFinished = true;
+            else
+                isFinished = false;
         
-        newCourseOffering = new CourseOffering(newCourse, gradeType,
-            isFinished, Double.parseDouble(newCourseGradeField.getText()));
+            newCourseOffering = new CourseOffering(newCourse, gradeType,
+                isFinished, Double.parseDouble(newCourseGradeField.getText()));
         
-        newStudent.addCourse(newCourseOffering);
-        System.out.println(newStudent);
+            newStudent.addCourse(newCourseOffering);
+            System.out.println(newStudent);
         
-        CardLayout card = (CardLayout)mainPanel.getLayout();
-        card.show(mainPanel, "addCategoryPanel");
+            CardLayout card = (CardLayout)mainPanel.getLayout();
+            card.show(mainPanel, "addCategoryPanel");
+        }catch (NumberFormatException e){
+            JOptionPane.showMessageDialog(null,
+                "Enter a number for Code, Grade, and Credits", "Creation warning",
+                        JOptionPane.WARNING_MESSAGE);
+        }catch (NullPointerException e){
+            JOptionPane.showMessageDialog(null,
+                "You must first create or load a student.", "Creation warning",
+                        JOptionPane.WARNING_MESSAGE);
+        }
         
     }//GEN-LAST:event_newCourseNextButtonActionPerformed
 
@@ -824,6 +842,9 @@ public class TrackerCardGUI extends javax.swing.JFrame {
             in.close();
             fileIn.close();
         }catch (IOException e){
+            JOptionPane.showMessageDialog(null,
+                "Please enter a valid ID number or create a new student.", "Load warning",
+                        JOptionPane.WARNING_MESSAGE);
             System.err.println(e);
         }catch (ClassNotFoundException e){
             System.err.println(e);
@@ -850,6 +871,7 @@ public class TrackerCardGUI extends javax.swing.JFrame {
     private javax.swing.JButton createStudentButton;
     private javax.swing.JPanel defaultPanel;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JButton loadButton;
     private javax.swing.JButton loadStudentButton;
@@ -869,10 +891,10 @@ public class TrackerCardGUI extends javax.swing.JFrame {
     private javax.swing.JTextField newCoursePrefixField;
     private javax.swing.JTextField newStudentEarnedField;
     private javax.swing.JTextField newStudentIdField;
-    private javax.swing.JLabel newStudentInfoLabel;
     private javax.swing.JTextField newStudentNameField;
     private javax.swing.JTextField newStudentNeededField;
     private javax.swing.JPanel newStudentPanel;
+    private javax.swing.JTextArea newStudentTextArea;
     private javax.swing.JButton saveProgressButton;
     private javax.swing.JButton studentCardButton;
     private javax.swing.JButton viewCoursesButton;
