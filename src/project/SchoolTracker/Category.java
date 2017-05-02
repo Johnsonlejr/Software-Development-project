@@ -106,8 +106,15 @@ public class Category implements Serializable
     public Assignment getAssignment(String name)
     {
         int i;
-        for (i = 0; i < assignments.size() && !assignments.get(i).equals(name); i++)
+        Assignment current;
+        boolean found = false;
+        for (i = 0; i < assignments.size() && !found; i++)
         {
+            current = (Assignment) assignments.get(i);
+            if (current.getName().equals(name))
+            {
+                found = true;
+            }
         }
         Assignment result = (Assignment) assignments.get(i);
         return result; 

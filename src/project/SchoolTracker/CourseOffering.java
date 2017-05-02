@@ -60,7 +60,10 @@ public class CourseOffering implements Serializable
     {
         return course;
     }
-    
+    public String getName()
+    {
+        return course.getName();
+    }
     /**
      * returns the grade in the class
      * @return grade the grade in the class
@@ -122,8 +125,15 @@ public class CourseOffering implements Serializable
     public Category getCategory(String name)
     {
         int i;
-        for (i = 0; i < categories.size() && !categories.get(i).equals(name); i++)
+        boolean found = false;
+        Category current;
+        for (i = 0; i < categories.size() && !found; i++)
         {
+           current = (Category) categories.get(i);
+           if (current.getName().equals(name))
+           {
+               found = true;
+           }
         }
         Category result = (Category) categories.get(i);
         return result;   
@@ -133,13 +143,20 @@ public class CourseOffering implements Serializable
      * removes the category from the array list
      * @param name the name of the of category
      */
-    public void removeCategory(String name)
+  public void removeCategory(String name)
     {
         int i;
-        for (i = 0; i < categories.size() && !categories.get(i).equals(name); i++)
+        boolean found = false;
+        Category current;
+        for (i = 0; i < categories.size() && !found; i++)
         {
+           current = (Category) categories.get(i);
+           if (current.getName().equals(name))
+           {
+               found = true;
+           }
         }
-        categories.remove(i);  
+        categories.remove(i);
     }
     /**
      * String conversion method
