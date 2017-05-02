@@ -79,8 +79,11 @@ public class Calculator
         for (int i = 0; i < list.size(); i++)
         {
             current = list.get(i);
-            hours += current.getCourse().getCredits();
-            points += calculateGPAPoints(current);
+            if (current.getGradeType() == 0)
+            {
+                hours += current.getCourse().getCredits();
+                points += calculateGPAPoints(current);
+            }
         }
         return points / hours;
     }
@@ -98,7 +101,7 @@ public class Calculator
         for (int i = 0; i < list.size(); i++)
         {
             current = list.get(i);
-            if (current.isFinished() && current.getGrade() >= 60)
+            if (current.isFinished() && (current.getGrade() >= 60 || current.getBGrade()))
                 creditsEarned = current.getCourse().getCredits();
         }
         return creditsEarned;

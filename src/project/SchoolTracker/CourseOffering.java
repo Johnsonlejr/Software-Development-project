@@ -74,7 +74,11 @@ public class CourseOffering implements Serializable
     {
         return grade;
     }
-    
+   
+    public boolean getBGrade()
+    {
+        return bGrade;
+    }
     /**
      * returns the grade type of the course
      * @return gradeTyoe the grade type of the class
