@@ -169,7 +169,11 @@ public class Student implements Serializable
     {
         courses.add(newCourse);
     }
-    
+    /**
+     * returns a reference to the courseOffering
+     * @param name the name of the courseOffering
+     * @return result reference to the courseOffering
+     */
     public CourseOffering getCourseOffering(String name)
     {
         int i;
@@ -178,6 +182,18 @@ public class Student implements Serializable
         }
         CourseOffering result = (CourseOffering) courses.get(i);
         return result;
+    }
+    /**
+     * removes a course from the student
+     * @param name the name of the course
+     */
+    public void removeCourseOffering(String name)
+    {
+        int i;
+        for (i = 0; i < courses.size() && !courses.get(i).equals(name); i++)
+        {
+        }
+        courses.remove(i);
     }
     /**
      * String conversion for the student

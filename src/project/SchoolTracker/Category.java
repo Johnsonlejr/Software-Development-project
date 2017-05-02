@@ -98,7 +98,11 @@ public class Category implements Serializable
         assignments.add(newAssignment);
         calculateAverage();
     }
-    
+    /**
+     * returns a reference to a assignment
+     * @param name
+     * @return result a reference to the assignment 
+     */
     public Assignment getAssignment(String name)
     {
         int i;
@@ -108,6 +112,19 @@ public class Category implements Serializable
         Assignment result = (Assignment) assignments.get(i);
         return result; 
     }
+    /**
+     * removes the assignment from the array list of assignments
+     * @param name the name of the assignment
+     */
+    public void removeAssignment(String name)
+    {
+        int i;
+        for (i = 0; i < assignments.size() && !assignments.get(i).equals(name); i++)
+        {
+        }
+        assignments.remove(i);
+    }
+    
     public String toString()
     {
         String result = "Category Name: " + name + " Category Weight: " +  weight + "\n";
