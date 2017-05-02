@@ -139,7 +139,6 @@ public class Student implements Serializable
         {
             result += iter.next().toString();
         }
-        
         return result;
     }
     
@@ -177,8 +176,17 @@ public class Student implements Serializable
     public CourseOffering getCourseOffering(String name)
     {
         int i;
-        for (i = 0; i < courses.size() && !courses.get(i).equals(name); i++)
-            ;
+        boolean found = false;
+        CourseOffering current;
+        for (i = 0; i < courses.size() && !found; i++)
+        {
+            current = (CourseOffering) courses.get(i);
+            if (current.getName().equals(name))
+            {
+                found = true;
+            }
+            
+        }
         CourseOffering result = (CourseOffering) courses.get(i);
         return result;
     }
@@ -189,8 +197,16 @@ public class Student implements Serializable
     public void removeCourseOffering(String name)
     {
         int i;
-        for (i = 0; i < courses.size() && !courses.get(i).equals(name); i++)
+        boolean found = false;
+        CourseOffering current;
+        for (i = 0; i < courses.size() && !found; i++)
         {
+            current = (CourseOffering) courses.get(i);
+            if (current.getName().equals(name))
+            {
+                found = true;
+            }
+            
         }
         courses.remove(i);
     }
