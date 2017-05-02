@@ -47,13 +47,19 @@ public class Calculator
     public static double calculateGrade(ArrayList<Category> list)
     {
         double total = 0;
+        double totalWeight = 0;
         Category current;
         for (int i = 0; i < list.size(); i++)
         {
             current = list.get(i);
-            double weight = current.getWeight() / 100;
             double average = current.getAverage();
-            total += (weight * average);
+            if (average != -1)
+            {
+                double weight = current.getWeight() / 100;
+                totalWeight += weight;
+                total += (weight * average);
+            }
+            total /= totalWeight;
         }
         return total;
     }

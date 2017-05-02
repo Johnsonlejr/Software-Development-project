@@ -33,7 +33,8 @@ public class CourseOffering implements Serializable
      * @param grade
      * @param gradeType
      */
-    public CourseOffering(Course course, Calendar start, Calendar end, double grade, int gradeType, int credits)
+    public CourseOffering(Course course, Calendar start, Calendar end, double grade, int gradeType
+    )
     {
         this.course = course;
         this.startDate = start;
@@ -114,7 +115,7 @@ public class CourseOffering implements Serializable
     {
         this.endDate = end;
     }
-    
+    1
     /**
      * changes the start date of the course
      * @param start the start date of the course
@@ -131,7 +132,7 @@ public class CourseOffering implements Serializable
     public void addCategory(Category newCategory)
     {
         categories.add(newCategory);
-        //calculateGrade();
+        calculateGrade();
     }
     
     /**
@@ -141,7 +142,15 @@ public class CourseOffering implements Serializable
     {
         grade = Calculator.calculateGrade(categories);
     }
-    
+    public Category getCategory(String name)
+    {
+        int i;
+        for (i = 0; i < categories.size() && !categories.get(i).equals(name); i++)
+        {
+        }
+        Category result = (Category) categories.get(i);
+        return result;   
+    }
     public String toString()
     {
        String result = course.getName() + " Grade: " + grade + "\n";

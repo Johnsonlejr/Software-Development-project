@@ -83,7 +83,10 @@ public class Category
      */
     public void calculateAverage()
     {
-        average = Calculator.calculateAverage(assignments);
+        if (assignments.size() == 0)
+            average = -1;
+        else
+            average = Calculator.calculateAverage(assignments);
     }
     /**
      * adds an assignment to the category and calculates the new average
@@ -95,6 +98,15 @@ public class Category
         calculateAverage();
     }
     
+    public Assignment getAssignment(String name)
+    {
+        int i;
+        for (i = 0; i < assignments.size() && !assignments.get(i).equals(name); i++)
+        {
+        }
+        Assignment result = (Assignment) assignments.get(i);
+        return result; 
+    }
     public String toString()
     {
         String result = "Category Name: " + name + " Category Weight: " +  weight + "\n";
