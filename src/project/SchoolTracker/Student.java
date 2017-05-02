@@ -170,6 +170,15 @@ public class Student implements Serializable
         courses.add(newCourse);
     }
     
+    public CourseOffering getCourseOffering(String name)
+    {
+        int i;
+        for (i = 0; i < courses.size() && !courses.get(i).equals(name); i++)
+        {
+        }
+        CourseOffering result = (CourseOffering) courses.get(i);
+        return result;
+    }
     /**
      * String conversion for the student
      * @return the string showing name gpa and credits earned
