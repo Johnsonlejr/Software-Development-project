@@ -55,17 +55,16 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         addCourseButton = new javax.swing.JButton();
         nameLabel = new javax.swing.JLabel();
         addCoursesPanel = new javax.swing.JPanel();
-        newCourseInfoLabel = new javax.swing.JLabel();
         newCourseNameField = new javax.swing.JTextField();
         newCoursePrefixField = new javax.swing.JTextField();
         newCourseCodeField = new javax.swing.JTextField();
-        newCourseStartField = new javax.swing.JTextField();
-        newCourseEndField = new javax.swing.JTextField();
         newCourseGradeField = new javax.swing.JTextField();
         newCourseCreditsField = new javax.swing.JTextField();
         newCourseNextButton = new javax.swing.JButton();
         newCourseGradeCombo = new javax.swing.JComboBox<>();
         newCourseFinishedCheck = new javax.swing.JCheckBox();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         addCategoryPanel = new javax.swing.JPanel();
         addCategoryFinishButton = new javax.swing.JButton();
         addCategoryInfoLabel = new javax.swing.JLabel();
@@ -306,8 +305,6 @@ public class TrackerCardGUI extends javax.swing.JFrame {
 
         mainPanel.add(mainCoursePanel, "mainCoursePanel");
 
-        newCourseInfoLabel.setText("Enter course information");
-
         newCourseNameField.setText("Name");
         newCourseNameField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -326,20 +323,6 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         newCourseCodeField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 newCourseCodeFieldFocusGained(evt);
-            }
-        });
-
-        newCourseStartField.setText("Start Date (mm, yyyy)");
-        newCourseStartField.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                newCourseStartFieldFocusGained(evt);
-            }
-        });
-
-        newCourseEndField.setText("End Date (mm, yyyy)");
-        newCourseEndField.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                newCourseEndFieldFocusGained(evt);
             }
         });
 
@@ -368,22 +351,18 @@ public class TrackerCardGUI extends javax.swing.JFrame {
 
         newCourseFinishedCheck.setText("Course Finished");
 
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("Please enter the course information.\n" + "If the course is a pass/fall type of course\n" + "enter grade as a 0 for fail and a 1 for pass.");
+        jScrollPane1.setViewportView(jTextArea1);
+
         javax.swing.GroupLayout addCoursesPanelLayout = new javax.swing.GroupLayout(addCoursesPanel);
         addCoursesPanel.setLayout(addCoursesPanelLayout);
         addCoursesPanelLayout.setHorizontalGroup(
             addCoursesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addCoursesPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(addCoursesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(addCoursesPanelLayout.createSequentialGroup()
-                        .addComponent(newCourseFinishedCheck)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(addCoursesPanelLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(addCoursesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(newCourseInfoLabel)
-                            .addComponent(newCourseNextButton))
-                        .addGap(131, 131, 131))
+                .addGroup(addCoursesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(addCoursesPanelLayout.createSequentialGroup()
                         .addGroup(addCoursesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(addCoursesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -391,40 +370,42 @@ public class TrackerCardGUI extends javax.swing.JFrame {
                                 .addComponent(newCoursePrefixField, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(newCourseGradeCombo, 0, 100, Short.MAX_VALUE))
                             .addComponent(newCourseNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
-                        .addGroup(addCoursesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(newCourseStartField)
-                            .addComponent(newCourseEndField)
-                            .addComponent(newCourseGradeField)
-                            .addComponent(newCourseCreditsField))
-                        .addGap(74, 74, 74))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
+                        .addGroup(addCoursesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(addCoursesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(newCourseGradeField)
+                                .addComponent(newCourseCreditsField, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE))
+                            .addComponent(newCourseFinishedCheck)
+                            .addComponent(newCourseNextButton)))
+                    .addGroup(addCoursesPanelLayout.createSequentialGroup()
+                        .addGap(0, 66, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(74, 74, 74))
         );
         addCoursesPanelLayout.setVerticalGroup(
             addCoursesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addCoursesPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(newCourseInfoLabel)
-                .addGap(18, 18, 18)
-                .addGroup(addCoursesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(newCourseStartField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(newCourseNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(addCoursesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(newCoursePrefixField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(newCourseEndField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(addCoursesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(newCourseCodeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(newCourseGradeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(addCoursesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(newCourseCreditsField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(newCourseGradeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(newCourseFinishedCheck)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
-                .addComponent(newCourseNextButton)
-                .addContainerGap())
+                    .addGroup(addCoursesPanelLayout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(newCourseNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(newCoursePrefixField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(newCourseCodeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(newCourseGradeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(addCoursesPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(newCourseFinishedCheck)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(newCourseGradeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(newCourseCreditsField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(newCourseNextButton)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         mainPanel.add(addCoursesPanel, "addCoursesPanel");
@@ -562,7 +543,7 @@ public class TrackerCardGUI extends javax.swing.JFrame {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(45, 45, 45)
                     .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(46, Short.MAX_VALUE)))
+                    .addContainerGap(68, Short.MAX_VALUE)))
         );
 
         pack();
@@ -609,12 +590,16 @@ public class TrackerCardGUI extends javax.swing.JFrame {
             nameLabel.setText("Hello, " + newStudent.getName());
         
             System.out.println(newStudent);
+            
+            saveStudent(newStudent);
         }catch(NumberFormatException e){
-            newStudentInfoLabel.setText("Please enter numbers for ID, GPA, Credits Earned, "
-                    + "and Credits Needed");
+            JOptionPane.showMessageDialog(null,
+                "Please enter numbers for ID, GPA, Credits Earned, and Credits Needed",
+                    "Student warning", JOptionPane.WARNING_MESSAGE);
+        }catch (NullPointerException e){
+            ;
         }
         
-        saveStudent(newStudent);
     }//GEN-LAST:event_createStudentButtonActionPerformed
 
     private void newStudentNameFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_newStudentNameFieldFocusGained
@@ -677,28 +662,10 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         newCourseCodeField.setText("");
     }//GEN-LAST:event_newCourseCodeFieldFocusGained
 
-    private void newCourseStartFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_newCourseStartFieldFocusGained
-        newCourseStartField.setText("");
-    }//GEN-LAST:event_newCourseStartFieldFocusGained
-
-    private void newCourseEndFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_newCourseEndFieldFocusGained
-        newCourseEndField.setText("");
-    }//GEN-LAST:event_newCourseEndFieldFocusGained
-
     private void newCourseNextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newCourseNextButtonActionPerformed
         Course newCourse = new Course(newCourseNameField.getText(),
             newCoursePrefixField.getText(), Integer.parseInt(newCourseCodeField.getText()),
                 Integer.parseInt(newCourseCreditsField.getText()));
-        
-        String[] startDate = new String[2];
-        startDate = newCourseStartField.getText().split(", ");
-        Calendar start = Calendar.getInstance();
-        start.set(Integer.parseInt(startDate[1]), Integer.parseInt(startDate[0]), 01);
-        
-        String[] endDate = new String[2];
-        endDate = newCourseEndField.getText().split(", ");
-        Calendar end = Calendar.getInstance();
-        end.set(Integer.parseInt(startDate[1]), Integer.parseInt(startDate[0]), 01);
         
         int gradeType = 0;
         String gradeTypeChoice = (String) newCourseGradeCombo.getSelectedItem();
@@ -707,9 +674,14 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         else
             gradeType = 1;
         
-        newCourseOffering = new CourseOffering(newCourse, start, end,
-            Double.parseDouble(newCourseGradeField.getText()), gradeType,
-                Integer.parseInt(newCourseCreditsField.getText()));
+        boolean isFinished;
+        if (newCourseFinishedCheck.isSelected())
+            isFinished = true;
+        else
+            isFinished = false;
+        
+        newCourseOffering = new CourseOffering(newCourse, gradeType,
+            isFinished, Double.parseDouble(newCourseGradeField.getText()));
         
         newStudent.addCourse(newCourseOffering);
         System.out.println(newStudent);
@@ -765,8 +737,6 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         
         newCourseNameField.setText("Name");
         newCourseGradeField.setText("Grade");
-        newCourseStartField.setText("Start Date(mm, yyy)");
-        newCourseEndField.setText("End Date(mm, yyyy)");
         newCourseCreditsField.setText("Credits");
         newCourseCodeField.setText("Code");
         newCoursePrefixField.setText("Prefix");
@@ -797,7 +767,13 @@ public class TrackerCardGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_addAssignmentButtonActionPerformed
 
     private void saveProgressButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveProgressButtonActionPerformed
-        saveStudent(newStudent);
+        try{
+            saveStudent(newStudent);
+        }catch (NullPointerException e){
+            JOptionPane.showMessageDialog(null,
+                "You must first create or load a student.", "Save warning",
+                        JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_saveProgressButtonActionPerformed
 
     private void loadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadButtonActionPerformed
@@ -886,6 +862,8 @@ public class TrackerCardGUI extends javax.swing.JFrame {
     private javax.swing.JButton courseCardButton;
     private javax.swing.JButton createStudentButton;
     private javax.swing.JPanel defaultPanel;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JButton loadButton;
     private javax.swing.JButton loadStudentButton;
     private javax.swing.JTextField loadStudentIdField;
@@ -896,15 +874,12 @@ public class TrackerCardGUI extends javax.swing.JFrame {
     private javax.swing.JLabel nameLabel;
     private javax.swing.JTextField newCourseCodeField;
     private javax.swing.JTextField newCourseCreditsField;
-    private javax.swing.JTextField newCourseEndField;
     private javax.swing.JCheckBox newCourseFinishedCheck;
     private javax.swing.JComboBox<String> newCourseGradeCombo;
     private javax.swing.JTextField newCourseGradeField;
-    private javax.swing.JLabel newCourseInfoLabel;
     private javax.swing.JTextField newCourseNameField;
     private javax.swing.JButton newCourseNextButton;
     private javax.swing.JTextField newCoursePrefixField;
-    private javax.swing.JTextField newCourseStartField;
     private javax.swing.JTextField newStudentEarnedField;
     private javax.swing.JTextField newStudentGpaField;
     private javax.swing.JTextField newStudentIdField;

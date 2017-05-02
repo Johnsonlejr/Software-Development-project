@@ -70,7 +70,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                   <Component id="mainPanel" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="46" max="32767" attributes="0"/>
+                  <EmptySpace pref="68" max="32767" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -379,22 +379,10 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="newCourseFinishedCheck" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="newCourseInfoLabel" min="-2" max="-2" attributes="0"/>
-                                  <Component id="newCourseNextButton" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                       <Component id="newCourseCodeField" alignment="0" max="32767" attributes="0"/>
@@ -403,59 +391,57 @@
                                   </Group>
                                   <Component id="newCourseNameField" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="127" max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="newCourseStartField" max="32767" attributes="0"/>
-                                  <Component id="newCourseEndField" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="newCourseGradeField" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="newCourseCreditsField" alignment="0" max="32767" attributes="0"/>
+                              <EmptySpace pref="137" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="newCourseGradeField" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="newCourseCreditsField" alignment="0" pref="114" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Component id="newCourseFinishedCheck" min="-2" max="-2" attributes="0"/>
+                                  <Component id="newCourseNextButton" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="0" pref="66" max="32767" attributes="0"/>
+                              <Component id="jScrollPane1" min="-2" pref="285" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace min="74" pref="74" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="newCourseInfoLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="newCourseStartField" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="newCourseNameField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="80" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="newCoursePrefixField" min="-2" max="-2" attributes="0"/>
-                          <Component id="newCourseEndField" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                              <Component id="newCourseNameField" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="newCoursePrefixField" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="newCourseCodeField" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="newCourseGradeCombo" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="newCourseFinishedCheck" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="newCourseGradeField" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="newCourseCreditsField" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="newCourseNextButton" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="newCourseCodeField" min="-2" max="-2" attributes="0"/>
-                          <Component id="newCourseGradeField" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="newCourseCreditsField" min="-2" max="-2" attributes="0"/>
-                          <Component id="newCourseGradeCombo" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="newCourseFinishedCheck" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="9" max="32767" attributes="0"/>
-                      <Component id="newCourseNextButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="newCourseInfoLabel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Enter course information"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JTextField" name="newCourseNameField">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Name"/>
@@ -478,22 +464,6 @@
               </Properties>
               <Events>
                 <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="newCourseCodeFieldFocusGained"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="newCourseStartField">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Start Date (mm, yyyy)"/>
-              </Properties>
-              <Events>
-                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="newCourseStartFieldFocusGained"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="newCourseEndField">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="End Date (mm, yyyy)"/>
-              </Properties>
-              <Events>
-                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="newCourseEndFieldFocusGained"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="newCourseGradeField">
@@ -538,6 +508,24 @@
                 <Property name="text" type="java.lang.String" value="Course Finished"/>
               </Properties>
             </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTextArea" name="jTextArea1">
+                  <Properties>
+                    <Property name="columns" type="int" value="20"/>
+                    <Property name="rows" type="int" value="5"/>
+                    <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="&quot;Please enter the course information.\n&quot; + &quot;If the course is a pass/fall type of course\n&quot; + &quot;enter grade as a 0 for fail and a 1 for pass.&quot;" type="code"/>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="addCategoryPanel">
