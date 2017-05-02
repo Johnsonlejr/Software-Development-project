@@ -70,10 +70,6 @@ public class CourseOffering implements Serializable
         return grade;
     }
    
-    public boolean getBGrade()
-    {
-        return bGrade;
-    }
     /**
      * returns the grade type of the course
      * @return gradeTyoe the grade type of the class
@@ -118,6 +114,11 @@ public class CourseOffering implements Serializable
     {
         grade = Calculator.calculateGrade(categories);
     }
+    /**
+     * returns reference to a category
+     * @param name the name of the category
+     * @return result reference to the category
+     */
     public Category getCategory(String name)
     {
         int i;
@@ -127,6 +128,23 @@ public class CourseOffering implements Serializable
         Category result = (Category) categories.get(i);
         return result;   
     }
+    
+    /**
+     * removes the category from the array list
+     * @param name the name of the of category
+     */
+    public void removeCategory(String name)
+    {
+        int i;
+        for (i = 0; i < categories.size() && !categories.get(i).equals(name); i++)
+        {
+        }
+        categories.remove(i);  
+    }
+    /**
+     * String conversion method
+     * @return result the string of all the courses
+     */
     public String toString()
     {
        String result = course.getName() + " Grade: " + grade + "\n";
