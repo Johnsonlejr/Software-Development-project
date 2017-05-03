@@ -190,6 +190,11 @@ public class Student implements Serializable
         CourseOffering result = (CourseOffering) courses.get(i);
         return result;
     }
+    
+    public ArrayList<CourseOffering> getCourses()
+    {
+        return courses;
+    }
     /**
      * removes a course from the student
      * @param name the name of the course
