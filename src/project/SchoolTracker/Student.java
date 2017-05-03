@@ -175,19 +175,16 @@ public class Student implements Serializable
      */
     public CourseOffering getCourseOffering(String name)
     {
-        int i;
-        boolean found = false;
-        CourseOffering current;
-        for (i = 0; i < courses.size() && !found; i++)
+        Course dummy = new Course("Fill", "Fill", 123, 3);
+        CourseOffering result = new CourseOffering(dummy, 0, true, 30);
+        Iterator<CourseOffering> iter = courses.iterator();
+        while (iter.hasNext())
         {
-            current = (CourseOffering) courses.get(i);
-            if (current.getName().equals(name))
+            if(iter.next().getName().equals(name))
             {
-                found = true;
+                result = iter.next();
             }
-            
         }
-        CourseOffering result = (CourseOffering) courses.get(i);
         return result;
     }
     
