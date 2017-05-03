@@ -182,7 +182,7 @@ public class Student implements Serializable
         {
             if(iter.next().getName().equals(name))
             {
-                result = iter.next();
+                result = (CourseOffering) iter.next();
             }
         }
         return result;
