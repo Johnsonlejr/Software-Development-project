@@ -9,6 +9,7 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.util.Calendar;
 import java.io.*;
+import java.util.ArrayList;
 /**
  *
  * @author Kyle
@@ -903,6 +904,13 @@ public class TrackerCardGUI extends javax.swing.JFrame {
             in.close();
             fileIn.close();
             
+            ArrayList<CourseOffering> courses = newStudent.getCourses();
+            for (int i = 0; i < courses.size(); i++)
+            {
+                createCoursePanel(courses.get(i));
+            }
+            
+            
             JOptionPane.showMessageDialog(null,
                 "Student was loaded.", "Student Loaded",
                         JOptionPane.INFORMATION_MESSAGE);
@@ -915,6 +923,41 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         }catch (ClassNotFoundException e){
             System.err.println(e);
         }
+    }
+    
+    public void createCoursePanel(CourseOffering course)
+    {
+        JButton newButton = new JButton(course.getName());
+    
+        CardLayout card = (CardLayout) mainPanel.getLayout();
+        viewCoursesPanel.add(newButton);
+        newButton.addActionListener(new ActionListener() 
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt) 
+            {
+                viewCourseActionPerformed(evt); 
+            }
+        }
+        );
+        
+        JPanel newPanel = new JPanel();
+        newPanel.setLayout(new BorderLayout());
+        
+        JLabel newLabel = new JLabel(course.getName());
+        JButton assignmentButton = new JButton("Add Assignment");
+        assignmentButton.addActionListener(new ActionListener()
+        {
+            public void actionPerformed (ActionEvent event)
+            {
+                createAssignmentActionPerformed(event);
+            }
+        }
+        );
+        newPanel.add(newLabel, BorderLayout.NORTH);
+        newPanel.add(assignmentButton, BorderLayout.SOUTH);
+        
+        mainPanel.add(newPanel, course.getName());
+        viewCoursesPanel.revalidate();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
