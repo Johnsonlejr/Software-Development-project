@@ -42,7 +42,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="courseCardButton" min="-2" pref="90" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="calculatorCardButton" min="-2" pref="90" max="-2" attributes="0"/>
+              <Component id="infoCardButton" min="-2" pref="90" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
@@ -57,11 +57,11 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="308" max="32767" attributes="0"/>
+              <EmptySpace pref="314" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="studentCardButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="courseCardButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="calculatorCardButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="infoCardButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="saveProgressButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -91,13 +91,13 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="addStudentButton" max="32767" attributes="0"/>
-                          <Component id="loadStudentButton" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="176" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="loadStudentButton" min="-2" max="-2" attributes="0"/>
+                          <Component id="addStudentButton" min="-2" pref="97" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="188" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="162" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -142,26 +142,32 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="126" max="-2" attributes="0"/>
-                      <Component id="newStudentInfoLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
-                  </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="newStudentIdField" alignment="0" max="32767" attributes="0"/>
-                          <Component id="newStudentNameField" alignment="0" pref="100" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="135" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="newStudentNeededField" pref="99" max="32767" attributes="0"/>
-                              <Component id="newStudentEarnedField" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="jScrollPane2" min="-2" pref="296" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
-                          <Component id="createStudentButton" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="newStudentIdField" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <Component id="newStudentNameField" min="-2" pref="100" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace pref="50" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="newStudentNeededField" alignment="1" min="-2" pref="99" max="-2" attributes="0"/>
+                                  <Component id="newStudentEarnedField" alignment="1" min="-2" pref="99" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="createStudentButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -169,30 +175,25 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="newStudentInfoLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jScrollPane2" min="-2" pref="70" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="newStudentNameField" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="newStudentEarnedField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="newStudentNameField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="newStudentIdField" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="newStudentNeededField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="createStudentButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="93" max="32767" attributes="0"/>
+                      <EmptySpace pref="14" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="newStudentInfoLabel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Enter student information"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JTextField" name="newStudentNameField">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Name"/>
@@ -235,6 +236,24 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="createStudentButtonActionPerformed"/>
               </Events>
             </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTextArea" name="newStudentTextArea">
+                  <Properties>
+                    <Property name="columns" type="int" value="20"/>
+                    <Property name="rows" type="int" value="5"/>
+                    <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="&quot;Please enter your information.\n&quot;&#xd;&#xa;+ &quot;If you have existing credits please only enter\n&quot;&#xd;&#xa;+ &quot;the credits that will not effect your GPA.\n&quot;&#xd;&#xa;+ &quot;If no existing credits, enter 0.&quot;" type="code"/>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="loadStudentPanel">
@@ -248,13 +267,13 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="187" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="loadStudentInfoLabel" max="32767" attributes="0"/>
-                          <Component id="loadStudentIdField" max="32767" attributes="0"/>
-                          <Component id="loadButton" max="32767" attributes="0"/>
+                      <EmptySpace pref="185" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="loadStudentInfoLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="loadStudentIdField" min="-2" pref="80" max="-2" attributes="0"/>
+                          <Component id="loadButton" min="-2" pref="80" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="166" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="170" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -305,20 +324,17 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="viewCoursesButton" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="addCourseButton" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="178" max="-2" attributes="0"/>
-                              <Component id="nameLabel" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                      <EmptySpace min="-2" pref="178" max="-2" attributes="0"/>
+                      <Component id="nameLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="257" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="addCourseButton" min="-2" pref="97" max="-2" attributes="0"/>
+                          <Component id="viewCoursesButton" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="184" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="168" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -528,20 +544,25 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="addCategoryInfoLabel" min="-2" max="-2" attributes="0"/>
-                          <Component id="addCategoryFinishButton" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="162" max="-2" attributes="0"/>
+                      <Component id="addCategoryInfoLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="180" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                      <Component id="addCategoryNameField" min="-2" pref="116" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="addCategoryWeightField" min="-2" pref="56" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="addCategoryAddButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="93" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
+                              <Component id="addCategoryNameField" min="-2" pref="116" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="addCategoryWeightField" min="-2" pref="56" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="addCategoryAddButton" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="186" max="-2" attributes="0"/>
+                              <Component id="addCategoryFinishButton" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="89" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -556,9 +577,9 @@
                           <Component id="addCategoryWeightField" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="addCategoryAddButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="87" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="addCategoryFinishButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace pref="86" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -581,11 +602,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Catagory Name"/>
               </Properties>
+              <Events>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="addCategoryNameFieldFocusGained"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="addCategoryWeightField">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Weight"/>
               </Properties>
+              <Events>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="addCategoryWeightFieldFocusGained"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="addCategoryAddButton">
               <Properties>
@@ -659,9 +686,9 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="courseCardButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="calculatorCardButton">
+    <Component class="javax.swing.JButton" name="infoCardButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Calculator"/>
+        <Property name="text" type="java.lang.String" value="Info"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="saveProgressButton">
