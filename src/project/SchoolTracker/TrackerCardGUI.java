@@ -650,6 +650,8 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, button.getText());
         
+        currentCourse = button.getText();
+        
     }
     
     private void createAssignmentActionPerformed(ActionEvent event)
@@ -717,11 +719,12 @@ public class TrackerCardGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_newCourseCreditsFieldFocusGained
 
     private void addCatagoryFinishButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCatagoryFinishButtonActionPerformed
-   
-        String course = newCoursePrefixField.getText() + " " + newCourseCodeField.getText();
+        newStudent.addCourse(newCourseOffering);
+        String course = newCourseNameField.getText();
         JButton newButton = new JButton(course);
         
-        CardLayout card = (CardLayout)mainPanel.getLayout();
+        
+        CardLayout card = (CardLayout) mainPanel.getLayout();
         viewCoursesPanel.add(newButton);
         newButton.addActionListener(new ActionListener() 
         {
@@ -787,6 +790,34 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         int grade = Integer.parseInt(assignmentGradeTextField.getText());
         Assignment newAssignment = new Assignment(grade, assignmentNameTextField.getText());
         JLabel assignmentLabel = new JLabel(newAssignment.getName() + ": " + newAssignment.getGrade());
+        
+          ButtonModel button = categories.getSelection();
+        String newCategory;
+        if (button == null)
+            System.out.println("Please pick a selection");
+        newCategory = button.getActionCommand();
+        
+        System.out.println(currentCourse);
+        CourseOffering course = newStudent.getCourseOffering(currentCourse);
+        Category thisCategory = course.getCategory(newCategory);
+        thisCategory.addAssignment(newAssignment);
+        
+        CardLayout card = (CardLayout) mainPanel.getLayout();
+        card.show(mainPanel, currentCourse);
+        
+        JPanel coursePanel = null;
+        Component visibleComp = null;
+        for (Component comp : mainPanel.getComponents()) 
+        {
+            if (comp.isVisible()) 
+            {
+                visibleComp = comp;
+                coursePanel = (JPanel) visibleComp;
+                break;
+            }
+        }
+        
+        coursePanel.add(assignmentLabel);
     }//GEN-LAST:event_addAssignmentButtonActionPerformed
 
     private void saveProgressButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveProgressButtonActionPerformed
@@ -935,4 +966,5 @@ public class TrackerCardGUI extends javax.swing.JFrame {
     private javax.swing.JButton viewCoursesButton;
     private javax.swing.JPanel viewCoursesPanel;
     // End of variables declaration//GEN-END:variables
+    private String currentCourse;
 }
