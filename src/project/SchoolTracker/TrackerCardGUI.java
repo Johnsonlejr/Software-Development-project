@@ -720,7 +720,6 @@ public class TrackerCardGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_newCourseCreditsFieldFocusGained
 
     private void addCatagoryFinishButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCatagoryFinishButtonActionPerformed
-        newStudent.addCourse(newCourseOffering);
         String course = newCourseNameField.getText();
         JButton newButton = new JButton(course);
         
@@ -740,6 +739,8 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         newPanel.setLayout(new BorderLayout());
         
         JLabel newLabel = new JLabel(course);
+        JPanel assignmentListPanel = new JPanel();
+        assignmentListPanel.setLayout(new FlowLayout());
         JButton assignmentButton = new JButton("Add Assignment");
         assignmentButton.addActionListener(new ActionListener()
         {
@@ -750,6 +751,7 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         }
         );
         newPanel.add(newLabel, BorderLayout.NORTH);
+        newPanel.add(assignmentListPanel, BorderLayout.CENTER);
         newPanel.add(assignmentButton, BorderLayout.SOUTH);
         
         mainPanel.add(newPanel, course);
@@ -792,7 +794,7 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         Assignment newAssignment = new Assignment(grade, assignmentNameTextField.getText());
         JLabel assignmentLabel = new JLabel(newAssignment.getName() + ": " + newAssignment.getGrade());
         
-          ButtonModel button = categories.getSelection();
+        ButtonModel button = categories.getSelection();
         String newCategory;
         if (button == null)
             System.out.println("Please pick a selection");
@@ -905,9 +907,16 @@ public class TrackerCardGUI extends javax.swing.JFrame {
             fileIn.close();
             
             ArrayList<CourseOffering> courses = newStudent.getCourses();
+            System.out.println(courses.toString());
             for (int i = 0; i < courses.size(); i++)
             {
                 createCoursePanel(courses.get(i));
+                ArrayList<Category> categoryList = courses.get(i).getCategories();
+                
+                for (int j = 0; j < categoryList.size(); j++)
+                {
+                    createCategory(categoryList.get(j));
+                }
             }
             
             
@@ -916,6 +925,7 @@ public class TrackerCardGUI extends javax.swing.JFrame {
                         JOptionPane.INFORMATION_MESSAGE);
             
         }catch (IOException e){
+            e.printStackTrace();
             JOptionPane.showMessageDialog(null,
                 "Please enter a valid ID number or create a new student.", "Load warning",
                         JOptionPane.WARNING_MESSAGE);
@@ -958,6 +968,14 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         
         mainPanel.add(newPanel, course.getName());
         viewCoursesPanel.revalidate();
+    }
+    
+    public void createCategory(Category newCategory)
+    {
+         JRadioButton newButton = new JRadioButton(newCategory.getName());
+         categories.add(newButton);
+         addAssignmentPanel.add(newButton); 
+         addAssignmentPanel.revalidate();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

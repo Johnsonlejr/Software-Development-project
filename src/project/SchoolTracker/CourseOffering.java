@@ -139,6 +139,12 @@ public class CourseOffering implements Serializable
         return result;  
     }
     
+    public ArrayList<Category> getCategories()
+    {
+        return categories;
+    }
+    
+    
     /**
      * removes the category from the array list
      * @param name the name of the of category
