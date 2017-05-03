@@ -12,6 +12,7 @@ package project.SchoolTracker;
 import java.io.Serializable;
 import java.util.Calendar;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  *
@@ -124,19 +125,18 @@ public class CourseOffering implements Serializable
      */
     public Category getCategory(String name)
     {
-        int i;
-        boolean found = false;
         Category current;
-        for (i = 0; i < categories.size() && !found; i++)
+        Category result = new Category("test", 60);
+        Iterator<Category> iter = categories.iterator();
+        while (iter.hasNext())
         {
-           current = (Category) categories.get(i);
-           if (current.getName().equals(name))
-           {
-               found = true;
-           }
+            current = (Category) iter.next();
+            if (current.getName().equals(name))
+            {
+                result = current;
+            }
         }
-        Category result = (Category) categories.get(i);
-        return result;   
+        return result;  
     }
     
     /**
