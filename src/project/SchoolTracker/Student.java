@@ -175,21 +175,21 @@ public class Student implements Serializable
      */
     public CourseOffering getCourseOffering(String name)
     {
-        int i;
-        boolean found = false;
         CourseOffering current;
-        for (i = 0; i < courses.size() && !found; i++)
+        Course dummy = new Course("fill", "fill", 123, 3);
+        CourseOffering result = new CourseOffering(dummy, 0, true, 90);
+        Iterator<CourseOffering> iter = courses.iterator();
+        while (iter.hasNext())
         {
-            current = (CourseOffering) courses.get(i);
+            current = (CourseOffering) iter.next();
             if (current.getName().equals(name))
             {
-                found = true;
+                result = current;
             }
-            
         }
-        CourseOffering result = (CourseOffering) courses.get(i);
-        return result;
+        return result;  
     }
+    
     
     public ArrayList<CourseOffering> getCourses()
     {
@@ -199,22 +199,7 @@ public class Student implements Serializable
      * removes a course from the student
      * @param name the name of the course
      */
-    public void removeCourseOffering(String name)
-    {
-        int i;
-        boolean found = false;
-        CourseOffering current;
-        for (i = 0; i < courses.size() && !found; i++)
-        {
-            current = (CourseOffering) courses.get(i);
-            if (current.getName().equals(name))
-            {
-                found = true;
-            }
-            
-        }
-        courses.remove(i);
-    }
+   
     /**
      * String conversion for the student
      * @return the string showing name gpa and credits earned
