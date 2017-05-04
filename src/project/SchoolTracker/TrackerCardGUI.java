@@ -36,7 +36,6 @@ public class TrackerCardGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        categories = new javax.swing.ButtonGroup();
         mainPanel = new javax.swing.JPanel();
         defaultPanel = new javax.swing.JPanel();
         addStudentButton = new javax.swing.JButton();
@@ -75,10 +74,6 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         addCategoryWeightField = new javax.swing.JTextField();
         addCategoryAddButton = new javax.swing.JButton();
         viewCoursesPanel = new javax.swing.JPanel();
-        addAssignmentPanel = new javax.swing.JPanel();
-        assignmentNameTextField = new javax.swing.JTextField();
-        assignmentGradeTextField = new javax.swing.JTextField();
-        addAssignmentButton = new javax.swing.JButton();
         studentCardButton = new javax.swing.JButton();
         courseCardButton = new javax.swing.JButton();
         infoCardButton = new javax.swing.JButton();
@@ -380,7 +375,7 @@ public class TrackerCardGUI extends javax.swing.JFrame {
                             .addComponent(newCourseFinishedCheck)
                             .addComponent(newCourseNextButton)))
                     .addGroup(addCoursesPanelLayout.createSequentialGroup()
-                        .addGap(0, 66, Short.MAX_VALUE)
+                        .addGap(0, 71, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(74, 74, 74))
         );
@@ -484,22 +479,6 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         viewCoursesPanel.setPreferredSize(new java.awt.Dimension(402, 229));
         viewCoursesPanel.setRequestFocusEnabled(false);
         mainPanel.add(viewCoursesPanel, "viewCoursesPanel");
-
-        assignmentNameTextField.setText("Assignment name");
-        addAssignmentPanel.add(assignmentNameTextField);
-
-        assignmentGradeTextField.setText("Assignment grade");
-        addAssignmentPanel.add(assignmentGradeTextField);
-
-        addAssignmentButton.setText("Add Assignment");
-        addAssignmentButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addAssignmentButtonActionPerformed(evt);
-            }
-        });
-        addAssignmentPanel.add(addAssignmentButton);
-
-        mainPanel.add(addAssignmentPanel, "addAssignmentPanel");
 
         studentCardButton.setText("Student");
         studentCardButton.addActionListener(new java.awt.event.ActionListener() {
@@ -651,14 +630,13 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, button.getText());
         
-        currentCourse = button.getText();
-        
+        currentCourse = button.getText();   
     }
     
     private void createAssignmentActionPerformed(ActionEvent event)
     {
            CardLayout card  = (CardLayout) mainPanel.getLayout();
-           card.show(mainPanel, "addAssignmentPanel");
+           card.show(mainPanel, currentCourse + " assignmentPanel");
     }
     private void newCourseNameFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_newCourseNameFieldFocusGained
         newCourseNameField.setText("");
@@ -709,17 +687,6 @@ public class TrackerCardGUI extends javax.swing.JFrame {
                         JOptionPane.WARNING_MESSAGE);
         }
         
-    }//GEN-LAST:event_newCourseNextButtonActionPerformed
-
-    private void newCourseGradeFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_newCourseGradeFieldFocusGained
-        newCourseGradeField.setText("");
-    }//GEN-LAST:event_newCourseGradeFieldFocusGained
-
-    private void newCourseCreditsFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_newCourseCreditsFieldFocusGained
-        newCourseCreditsField.setText("");
-    }//GEN-LAST:event_newCourseCreditsFieldFocusGained
-
-    private void addCatagoryFinishButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCatagoryFinishButtonActionPerformed
         String course = newCourseNameField.getText();
         JButton newButton = new JButton(course);
         
@@ -754,9 +721,28 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         newPanel.add(assignmentListPanel, BorderLayout.CENTER);
         newPanel.add(assignmentButton, BorderLayout.SOUTH);
         
+        
+        addAssignmentPanel = new JPanel();
+        assignmentName = new JTextField("Assignment Name");
+        assignmentGrade = new JTextField("Assignment Grade");
+        addAssignment = new JButton("Add");
+        categories = new ButtonGroup();
+        addAssignment.addActionListener(new ActionListener() 
+        {
+            public void actionPerformed(ActionEvent event)
+            {
+                addAssignmentButtonActionPerformed(event);
+            }
+        }
+        );
+        
+        addAssignmentPanel.add(assignmentName);
+        addAssignmentPanel.add(assignmentGrade);
+        addAssignmentPanel.add(addAssignment);
+        
         mainPanel.add(newPanel, course);
-        viewCoursesPanel.revalidate();
-        card.show(mainPanel, "viewCoursesPanel");
+        mainPanel.add(addAssignmentPanel, course + " assignmentPanel");
+        viewCoursesPanel.revalidate(); 
         
         newCourseNameField.setText("Name");
         newCourseGradeField.setText("Grade");
@@ -766,32 +752,12 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         
     
     
+    }//GEN-LAST:event_newCourseNextButtonActionPerformed
 
-    }//GEN-LAST:event_addCatagoryFinishButtonActionPerformed
-
-    private void addCategoryAddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCategoryAddButtonActionPerformed
-        try{
-            Category newCategory = new Category(addCategoryNameField.getText(),
-            Double.parseDouble(addCategoryWeightField.getText()));
-        
-            newCourseOffering.addCategory(newCategory);
-        
-            JRadioButton newButton = new JRadioButton(newCategory.getName());
-            categories.add(newButton);
-            addAssignmentPanel.add(newButton); 
-            addAssignmentPanel.revalidate();
-        
-            System.out.println(newStudent);
-        }catch (NumberFormatException e){
-            JOptionPane.showMessageDialog(null,
-                "Weight must be a number.", "Category warning",
-                        JOptionPane.WARNING_MESSAGE);
-        }
-    }//GEN-LAST:event_addCategoryAddButtonActionPerformed
-
-    private void addAssignmentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addAssignmentButtonActionPerformed
-        int grade = Integer.parseInt(assignmentGradeTextField.getText());
-        Assignment newAssignment = new Assignment(grade, assignmentNameTextField.getText());
+    private void addAssignmentButtonActionPerformed(java.awt.event.ActionEvent evt)
+    {
+        int grade = Integer.parseInt(assignmentGrade.getText());
+        Assignment newAssignment = new Assignment(grade, assignmentName.getText());
         JLabel assignmentLabel = new JLabel(newAssignment.getName() + ": " + newAssignment.getGrade());
         
         ButtonModel button = categories.getSelection();
@@ -821,7 +787,41 @@ public class TrackerCardGUI extends javax.swing.JFrame {
         }
         
         coursePanel.add(assignmentLabel);
+        coursePanel.revalidate();
     }//GEN-LAST:event_addAssignmentButtonActionPerformed
+
+    private void newCourseGradeFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_newCourseGradeFieldFocusGained
+        newCourseGradeField.setText("");
+    }//GEN-LAST:event_newCourseGradeFieldFocusGained
+
+    private void newCourseCreditsFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_newCourseCreditsFieldFocusGained
+        newCourseCreditsField.setText("");
+    }//GEN-LAST:event_newCourseCreditsFieldFocusGained
+
+    private void addCatagoryFinishButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCatagoryFinishButtonActionPerformed
+        
+
+    }//GEN-LAST:event_addCatagoryFinishButtonActionPerformed
+
+    private void addCategoryAddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCategoryAddButtonActionPerformed
+        try{
+            Category newCategory = new Category(addCategoryNameField.getText(),
+            Double.parseDouble(addCategoryWeightField.getText()));
+        
+            newCourseOffering.addCategory(newCategory);
+        
+            JRadioButton newButton = new JRadioButton(newCategory.getName());
+            categories.add(newButton);
+            addAssignmentPanel.add(newButton); 
+            addAssignmentPanel.revalidate();
+        
+            System.out.println(newStudent);
+        }catch (NumberFormatException e){
+            JOptionPane.showMessageDialog(null,
+                "Weight must be a number.", "Category warning",
+                        JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_addCategoryAddButtonActionPerformed
 
     private void saveProgressButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveProgressButtonActionPerformed
         try{
@@ -973,14 +973,11 @@ public class TrackerCardGUI extends javax.swing.JFrame {
     public void createCategory(Category newCategory)
     {
          JRadioButton newButton = new JRadioButton(newCategory.getName());
-         categories.add(newButton);
          addAssignmentPanel.add(newButton); 
          addAssignmentPanel.revalidate();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addAssignmentButton;
-    private javax.swing.JPanel addAssignmentPanel;
     private javax.swing.JButton addCategoryAddButton;
     private javax.swing.JButton addCategoryFinishButton;
     private javax.swing.JLabel addCategoryInfoLabel;
@@ -990,9 +987,6 @@ public class TrackerCardGUI extends javax.swing.JFrame {
     private javax.swing.JButton addCourseButton;
     private javax.swing.JPanel addCoursesPanel;
     private javax.swing.JButton addStudentButton;
-    private javax.swing.JTextField assignmentGradeTextField;
-    private javax.swing.JTextField assignmentNameTextField;
-    private javax.swing.ButtonGroup categories;
     private javax.swing.JButton courseCardButton;
     private javax.swing.JButton createStudentButton;
     private javax.swing.JPanel defaultPanel;
@@ -1028,4 +1022,9 @@ public class TrackerCardGUI extends javax.swing.JFrame {
     private javax.swing.JPanel viewCoursesPanel;
     // End of variables declaration//GEN-END:variables
     private String currentCourse;
+    JPanel addAssignmentPanel;
+    JTextField assignmentName;
+    JTextField assignmentGrade;
+    JButton addAssignment;
+    ButtonGroup categories;
 }
